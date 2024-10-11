@@ -54,8 +54,6 @@ const RainDropGenerator = () => {
   }, []);
   // almost want a subscription service
 
-  console.log('rerender', RainDrops);
-  // some sort of map of set timeouts to the raindrops
   return <>{...RainDrops.current}</>;
 };
 

@@ -59,14 +59,14 @@ const RainDrop = ({ size }: RainDropProps) => {
       {/* discussing i know, but cant do random value in tailwind in the props. could map out all the possible heights, but not worth it and that would be uglier lol */}
 
       <RainDropIcon
-        className={`${size === 'large' ? large : size === 'medium' ? medium : size === 'small' ? small : xSmall} opacity-0 absolute fill-accent duration-2000 animate-raindrop`}
+        className={`${size === 'large' ? large : size === 'medium' ? medium : size === 'small' ? small : xSmall} opacity-0 absolute fill-primary/40 duration-2000 animate-raindrop`}
       />
       <span
-        className={`absolute flex ${size === 'large' ? large : size === 'medium' ? medium : size === 'small' ? small : xSmall}`}
+        className={`absolute flex ${size === 'large' ? large : size === 'medium' ? medium : size === 'small' ? small : xSmall} *:opacity-0 *:absolute *:inline-flex *:h-full *:w-full *:rounded-full *:border-2 *:border-primary/20`}
       >
-        <span className='animate-ripple delay-2000 opacity-0 absolute inline-flex h-full w-full rounded-full border-2 border-accent'></span>
-        <span className='animate-ripple delay-2300 opacity-0 absolute inline-flex h-full w-full rounded-full border-2 border-accent'></span>
-        <span className='animate-ripple delay-2600 opacity-0 absolute inline-flex h-full w-full rounded-full border-2 border-accent'></span>
+        <span className='animate-ripple delay-2000'></span>
+        <span className='animate-ripple delay-2300'></span>
+        <span className='animate-ripple delay-2600'></span>
       </span>
     </div>
   );

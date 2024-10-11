@@ -33,7 +33,7 @@ const ClickableCard = React.forwardRef<HTMLDivElement, ClickableCardProps>(
     <div
       ref={ref}
       className={cn(
-        'rounded-xl border bg-card  cursor-pointer text-card-foreground shadow hover:bg-primary/90 group',
+        'rounded-xl border bg-card cursor-pointer text-card-foreground shadow hover:bg-primary/90 group',
         className,
       )}
       {...props}
@@ -58,7 +58,7 @@ const CardHeader = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      'flex flex-col space-y-1.5 p-6  group-hover:text-accent-foreground',
+      'flex flex-col space-y-1.5 p-6 group-hover:text-accent-foreground',
       className,
     )}
     {...props}

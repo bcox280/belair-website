@@ -71,23 +71,23 @@ const CardTest = ({ index, name }: { index: number; name: string }) => (
 
 export const Page = () => {
   return (
-    <div className='group/meep group/moop  mx-auto grid grid-cols-[4fr_4fr_4fr] grid-rows-[4fr_4fr_4fr] [&:has(>*:nth-child(1):hover)]:grid-cols-[8fr_4fr_4fr] [&:has(>*:nth-child(1):hover)]:grid-rows-[8fr_4fr_4fr] [&:has(>*:nth-child(2):hover)]:grid-cols-[4fr_6fr_4fr] [&:has(>*:nth-child(2):hover)]:grid-rows-[6fr_4fr_4fr] [&:has(>*:nth-child(3):hover)]:grid-cols-[6fr_4fr_4fr] [&:has(>*:nth-child(3):hover)]:grid-rows-[4fr_6fr_4fr] [&:has(>*:nth-child(4):hover)]:grid-cols-[4fr_6fr_4fr] [&:has(>*:nth-child(4):hover)]:grid-rows-[4fr_6fr_4fr] [&:has(>*:nth-child(5):hover)]:grid-cols-[4fr_4fr_8fr] [&:has(>*:nth-child(5):hover)]:grid-rows-[4fr_8fr_4fr] duration-500 items-start justify-center gap-6 p-6 sm:p-8'>
-      <Card className=' transition ease-in-out min-h-full min-w-full hover:-translate-y-1 hover/:bg-indigo-500 duration-500 '>
+    <div className='mx-auto grid grid-cols-[4fr_4fr_4fr] grid-rows-[4fr_4fr_4fr] [&:has(>*:nth-child(1):hover)]:grid-cols-[8fr_4fr_4fr] [&:has(>*:nth-child(1):hover)]:grid-rows-[8fr_4fr_4fr] [&:has(>*:nth-child(2):hover)]:grid-cols-[4fr_6fr_4fr] [&:has(>*:nth-child(2):hover)]:grid-rows-[6fr_4fr_4fr] [&:has(>*:nth-child(3):hover)]:grid-cols-[6fr_4fr_4fr] [&:has(>*:nth-child(3):hover)]:grid-rows-[4fr_6fr_4fr] [&:has(>*:nth-child(4):hover)]:grid-cols-[4fr_6fr_4fr] [&:has(>*:nth-child(4):hover)]:grid-rows-[4fr_6fr_4fr] [&:has(>*:nth-child(5):hover)]:grid-cols-[4fr_4fr_8fr] [&:has(>*:nth-child(5):hover)]:grid-rows-[4fr_8fr_4fr] duration-500 items-start justify-center gap-6 p-6 sm:p-8'>
+      <Card className=' transition ease-in-out min-h-full min-w-full hover:-translate-y-1 hover:bg-primary/90 duration-500'>
         <p></p>
         <CardTest index={0} name={'Me'} />
       </Card>
 
-      <Card className='min-h-full min-w-full flex flex-col hover:-translate-y-1 col-span-2 hover/:bg-indigo-500 duration-500  '>
+      <Card className='min-h-full min-w-full flex flex-col hover:-translate-y-1 col-span-2 hover:bg-primary/90 duration-500'>
         <CardTest index={1} name={'Hobbies'} />
       </Card>
-      <Card className='min-h-full min-w-full hover:-translate-y-1 hover/:bg-indigo-500 duration-500 '>
+      <Card className='min-h-full min-w-full hover:-translate-y-1 hover:bg-primary/90 duration-500'>
         <EducationCard />
       </Card>
 
-      <Card className='min-h-full min-w-full hover:-translate-y-1 hover/:bg-indigo-500 duration-500 '>
+      <Card className='min-h-full min-w-full hover:-translate-y-1 hover:bg-primary/90  duration-500'>
         <WorkCard />
       </Card>
-      <Card className='group/skills min-h-full min-w-full hover:-translate-y-1 hover/:bg-indigo-500 duration-500 '>
+      <Card className='group/skills min-h-full min-w-full hover:-translate-y-1 hover:bg-primary/90  duration-500'>
         <CardTest index={4} name={'Skills'} />
       </Card>
     </div>

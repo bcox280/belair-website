@@ -16,7 +16,7 @@ const ThemeTranslator = () => {};
 
 // make sure these are aligned with styles/globals.css
 const DARK_MODE_VAR = ['dark', 'light'] as const;
-const THEME_COLOURS = ['green', 'blue', 'default'] as const;
+const THEME_COLOURS = ['green', 'blue', 'red', 'grey', 'default'] as const;
 
 export const AvailableThemes = DARK_MODE_VAR.flatMap((isDarkMode) =>
   THEME_COLOURS.map((colour) => colour + '-' + isDarkMode),
@@ -81,24 +81,14 @@ export const ThemeToggle = () => {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-          <DropdownMenuCheckboxItem
-            checked={themeCombo.colour === 'default'}
-            onCheckedChange={() => setThemeColour('default')}
-          >
-            Default
-          </DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem
-            checked={themeCombo.colour === 'green'}
-            onCheckedChange={() => setThemeColour('green')}
-          >
-            Green
-          </DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem
-            checked={themeCombo.colour === 'blue'}
-            onCheckedChange={() => setThemeColour('blue')}
-          >
-            Blue
-          </DropdownMenuCheckboxItem>
+          {THEME_COLOURS.map((colour) => (
+            <DropdownMenuCheckboxItem
+              checked={themeCombo.colour === colour}
+              onCheckedChange={() => setThemeColour(colour)}
+            >
+              <div className='first-letter:capitalize'>{colour}</div>
+            </DropdownMenuCheckboxItem>
+          ))}
         </DropdownMenuContent>
       </DropdownMenu>
 
