@@ -1,4 +1,3 @@
-// TODO figure out how to use client properly
 'use client';
 
 import { useRouter } from 'next/navigation';
@@ -11,12 +10,12 @@ export const Page = () => {
   const router = useRouter();
 
   return (
-    <div className='overscroll-none'>
+    <div className="overscroll-none">
       <ThemeToggle />
-      <div className='h-screen flex items-center justify-center'>
+      <div className="flex h-screen items-center justify-center">
         <Button
           variant={'outline'}
-          className='z-10'
+          className="z-10"
           onClick={() => router.push('/home')}
         >
           Enter

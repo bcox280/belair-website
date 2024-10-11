@@ -54,18 +54,18 @@ export const CommandLayout = () => {
         value={value}
         onValueChange={(v) => setValue(v)}
       >
-        <CommandInput placeholder='Go to another page' />
+        <CommandInput placeholder="Go to another page" />
         <CommandList
           pages={pageItems}
           value={value}
           className={'flex flex-row'}
         />
       </CommandDialog>
-      <div className='container flex flex-row justify-end p-0 max-w-full z-10'>
-        <p className='text-sm text-muted-foreground pr-4 pb-4'>
+      <div className="container z-10 flex max-w-full flex-row justify-end p-0">
+        <p className="pb-4 pr-4 text-sm text-muted-foreground">
           Navigate:{' '}
-          <kbd className='pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100'>
-            <span className='text-xs'>⌘</span>J
+          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+            <span className="text-xs">⌘</span>J
           </kbd>
         </p>
       </div>

@@ -19,7 +19,7 @@ const DARK_MODE_VAR = ['dark', 'light'] as const;
 const THEME_COLOURS = ['green', 'blue', 'red', 'grey', 'default'] as const;
 
 export const AvailableThemes = DARK_MODE_VAR.flatMap((isDarkMode) =>
-  THEME_COLOURS.map((colour) => colour + '-' + isDarkMode),
+  THEME_COLOURS.map((colour) => colour + '-' + isDarkMode)
 );
 type ThemeColour = (typeof THEME_COLOURS)[number];
 
@@ -73,10 +73,10 @@ export const ThemeToggle = () => {
   };
 
   return (
-    <div className='container flex flex-row justify-end p-0 max-w-full z-10'>
+    <div className="container z-10 flex max-w-full flex-row justify-end p-0">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant='ghost' className='z-10'>
+          <Button variant="ghost" className="z-10">
             Colour
           </Button>
         </DropdownMenuTrigger>
@@ -86,21 +86,21 @@ export const ThemeToggle = () => {
               checked={themeCombo.colour === colour}
               onCheckedChange={() => setThemeColour(colour)}
             >
-              <div className='first-letter:capitalize'>{colour}</div>
+              <div className="first-letter:capitalize">{colour}</div>
             </DropdownMenuCheckboxItem>
           ))}
         </DropdownMenuContent>
       </DropdownMenu>
 
       <Button
-        variant='ghost'
-        size='icon'
-        className='z-10'
+        variant="ghost"
+        size="icon"
+        className="z-10"
         onClick={() => toggleDarkMode()}
       >
-        <Sun className='h-6 w-[1.3rem] dark:hidden' />
-        <Moon className='hidden size-5 dark:block' />
-        <span className='sr-only'>Toggle theme dark mode</span>
+        <Sun className="h-6 w-[1.3rem] dark:hidden" />
+        <Moon className="hidden size-5 dark:block" />
+        <span className="sr-only">Toggle theme dark mode</span>
       </Button>
     </div>
   );

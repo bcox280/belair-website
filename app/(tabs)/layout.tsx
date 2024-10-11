@@ -15,9 +15,9 @@ interface RootLayoutProps {
 
 export const RootLayout = ({ children }: RootLayoutProps) => {
   return (
-    <div className='overscroll-none'>
+    <div className="overscroll-none">
       <ThemeToggle />
-      <div className='h-screen '>{children}</div>
+      <div className="h-screen">{children}</div>
       <CommandLayout />
     </div>
   );

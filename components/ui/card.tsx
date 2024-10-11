@@ -10,7 +10,7 @@ const Card = React.forwardRef<
     ref={ref}
     className={cn(
       'rounded-xl border bg-card text-card-foreground shadow',
-      className,
+      className
     )}
     {...props}
   />
@@ -28,26 +28,26 @@ export interface ClickableCardProps
 const ClickableCard = React.forwardRef<HTMLDivElement, ClickableCardProps>(
   (
     { className, cardHeader, cardTitle, cardContent, cardFooter, ...props },
-    ref,
+    ref
   ) => (
     <div
       ref={ref}
       className={cn(
-        'rounded-xl border bg-card cursor-pointer text-card-foreground shadow hover:bg-primary/90 group',
-        className,
+        'group cursor-pointer rounded-xl border bg-card text-card-foreground shadow hover:bg-primary/90',
+        className
       )}
       {...props}
     >
-      <CardHeader className='space-y-0 pb-2'>
+      <CardHeader className="space-y-0 pb-2">
         <CardDescription>{cardHeader}</CardDescription>
-        <CardTitle className='text-4xl tabular-nums'>{cardTitle}</CardTitle>
+        <CardTitle className="text-4xl tabular-nums">{cardTitle}</CardTitle>
       </CardHeader>
       <CardContent> {cardContent}</CardContent>
-      <CardFooter className='flex-col items-start gap-1'>
+      <CardFooter className="flex-col items-start gap-1">
         <CardDescription>{cardFooter}</CardDescription>
       </CardFooter>
     </div>
-  ),
+  )
 );
 ClickableCard.displayName = 'ClickableCard';
 
@@ -59,7 +59,7 @@ const CardHeader = React.forwardRef<
     ref={ref}
     className={cn(
       'flex flex-col space-y-1.5 p-6 group-hover:text-accent-foreground',
-      className,
+      className
     )}
     {...props}
   />
@@ -74,7 +74,7 @@ const CardTitle = React.forwardRef<
     ref={ref}
     className={cn(
       'font-semibold leading-none tracking-tight  group-hover:text-accent-foreground',
-      className,
+      className
     )}
     {...props}
   />
@@ -88,8 +88,8 @@ const CardDescription = React.forwardRef<
   <p
     ref={ref}
     className={cn(
-      'text-sm text-muted-foregroundgroup-hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
-      className,
+      'text-sm text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring group-hover:text-accent-foreground',
+      className
     )}
     {...props}
   />
@@ -112,7 +112,7 @@ const CardFooter = React.forwardRef<
     ref={ref}
     className={cn(
       'flex items-center p-6 pt-0  group-hover:text-accent-foreground',
-      className,
+      className
     )}
     {...props}
   />

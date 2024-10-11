@@ -20,22 +20,19 @@ const RainDropGenerator = () => {
 
         if (randy < 1) {
           rainDropCopy.push(
-            <RainDrop size={'small'} key={'raindrop' + currentSize.current} />,
+            <RainDrop size={'small'} key={'raindrop' + currentSize.current} />
           );
         } else if (randy < 2) {
           rainDropCopy.push(
-            <RainDrop size={'medium'} key={'raindrop' + currentSize.current} />,
+            <RainDrop size={'medium'} key={'raindrop' + currentSize.current} />
           );
         } else if (randy < 3) {
           rainDropCopy.push(
-            <RainDrop size={'large'} key={'raindrop' + currentSize.current} />,
+            <RainDrop size={'large'} key={'raindrop' + currentSize.current} />
           );
         } else {
           rainDropCopy.push(
-            <RainDrop
-              size={'x-small'}
-              key={'raindrop' + currentSize.current}
-            />,
+            <RainDrop size={'x-small'} key={'raindrop' + currentSize.current} />
           );
         }
         // this does work, butttttt once the array gets super large, then what? some sort of cleanup function.

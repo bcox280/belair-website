@@ -1,4 +1,4 @@
-import { ClickableCard, ClickableCardProps } from '@/components/ui/card';
+import { ClickableCard } from '@/components/ui/card';
 import { CommandItem } from '@/components/ui/command';
 
 import { CardProps, PageItemProps } from '../types';
