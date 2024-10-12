@@ -8,15 +8,20 @@ export const Projects = () => {
   const router = useRouter();
 
   return (
-    <div className="chart-wrapper mx-auto flex max-w-6xl flex-col flex-wrap items-start justify-center gap-6 p-6 sm:flex-row sm:p-8">
-      <div className="grid w-full gap-6 sm:grid-cols-2 lg:max-w-[20rem] lg:grid-cols-1 xl:max-w-[20rem]">
-        <AboutCard navigate={router.push} className="lg:max-w-md" />
-        <ArtCard navigate={router.push} className="flex flex-col lg:max-w-md" />
-      </div>
+    <div className="mx-auto grid grid-cols-[2fr_2fr] grid-rows-[2fr_2fr] items-start justify-center gap-6 p-6 ">
+      <AboutCard
+        navigate={router.push}
+        className="h-full duration-300 hover:-translate-y-1 hover:scale-110 lg:max-w-[20rem]"
+      />
+      <ArtCard
+        navigate={router.push}
+        className="h-full duration-300 hover:-translate-y-1 hover:scale-110 lg:max-w-[20rem]"
+      />
 
-      <div className="grid w-full flex-1 gap-6 lg:max-w-[20rem]">
-        <CoffeeFinderCard navigate={router.push} className="lg:max-w-md" />
-      </div>
+      <CoffeeFinderCard
+        navigate={router.push}
+        className="h-full duration-300 hover:-translate-y-1 hover:scale-110 lg:max-w-[20rem]"
+      />
     </div>
   );
 };

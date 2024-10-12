@@ -62,7 +62,7 @@ export const ThemeToggle = () => {
 
   useEffect(() => {
     setTheme(`${themeCombo.colour}-${themeCombo.darkMode ? 'dark' : 'light'}`);
-  }, [themeCombo.colour, themeCombo.darkMode, themeCombo]);
+  }, [themeCombo.colour, themeCombo.darkMode, themeCombo, setTheme]);
 
   const setThemeColour = (colour: ThemeColour) => {
     setThemeCombo({ ...themeCombo, colour });

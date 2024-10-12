@@ -98,12 +98,31 @@ module.exports = {
             opacity: '0',
           },
         },
+        'ripple-large': {
+          // okay so i kinda want this to end up taking the whole screen, scaling will be annoying tho
+          '25%': {
+            opacity: '50%',
+          },
+          '50%': {
+            opacity: '25%',
+          },
+          '75%': {
+            opacity: '10%',
+          },
+          '100%': {
+            transform: 'scale(48)',
+            opacity: '0',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         raindrop: 'raindrop 2s',
         ripple: 'ripple 4s cubic-bezier(.01,.47,.96,.58)',
+        // this is for the button click on the loading page. 3s is aligned with that. two animation libs are interfering with
+        // doing animation timing in css, so resorting to setting here.
+        'ripple-large': 'ripple-large 3s cubic-bezier(.09,.36,1,.61)',
       },
     },
   },

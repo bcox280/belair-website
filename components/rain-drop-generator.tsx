@@ -4,13 +4,13 @@ import { getRandNumberBetween } from '@/lib/window';
 
 import RainDrop from './rain-drop';
 
+// TODO aim to make this a lil more responsive. theres something here chewing up memory
 const RainDropGenerator = () => {
   // This is some of the worst code ive ever written and i love it
   const [rerender, forceRerender] = useState('la');
   const currentSize = useRef(1);
   const RainDrops = useRef([] as JSX.Element[]);
 
-  // could have it so you subscribe, and then every x seconds, it pushes out a random raindrop
   useEffect(() => {
     // maybe extract this out tbh
     const generateRainDrop = () =>
@@ -35,7 +35,7 @@ const RainDropGenerator = () => {
             <RainDrop size={'x-small'} key={'raindrop' + currentSize.current} />
           );
         }
-        // this does work, butttttt once the array gets super large, then what? some sort of cleanup function.
+        // cull the list for a lil
         if (currentSize.current === 200) {
           RainDrops.current = rainDropCopy.slice(100);
         } else {
@@ -49,7 +49,6 @@ const RainDropGenerator = () => {
       }, 200);
     generateRainDrop();
   }, []);
-  // almost want a subscription service
 
   return <>{...RainDrops.current}</>;
 };
