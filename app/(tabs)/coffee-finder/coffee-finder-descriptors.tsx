@@ -12,16 +12,15 @@ export const CoffeeFinderPageItem = ({ onSelect }: PageItemProps) => (
     onSelect={() => onSelect(`/${CoffeeFinderString}`)}
     key={`${CoffeeFinderString}-item`}
   >
-    <span>{CoffeeFinderString}</span>
+    <span>Coffee Finder</span>
   </CommandItem>
 );
 
 export const CoffeeFinderCard = ({ navigate, ...props }: CardProps) => {
-  //yucky
   return (
     <ClickableCard
       {...props}
-      onClick={() => navigate(CoffeeFinderString)} // this can be done the same as item.
+      onClick={() => navigate(CoffeeFinderString)}
       cardContent={'Map Photo'}
       cardFooter={'Find out all the information you would need about Blair'}
       cardHeader={'Coffee Finder'}

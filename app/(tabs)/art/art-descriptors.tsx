@@ -12,16 +12,15 @@ export const ArtPageItem = ({ onSelect }: PageItemProps) => (
     onSelect={() => onSelect(`/${ArtString}`)}
     key={`${ArtString}-item`}
   >
-    <span>{ArtString}</span>
+    Art
   </CommandItem>
 );
 
 export const ArtCard = ({ navigate, ...props }: CardProps) => {
-  //yucky
   return (
     <ClickableCard
       {...props}
-      onClick={() => navigate(ArtString)} // this can be done the same as item.
+      onClick={() => navigate(ArtString)}
       cardContent={'Art'}
       cardFooter={'Find out all the information you would need about Blair'}
       cardHeader={'Art'}

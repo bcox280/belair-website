@@ -12,17 +12,16 @@ export const HomePageItem = ({ onSelect }: PageItemProps) => (
     onSelect={() => onSelect(`/${HomeString}`)}
     key={`${HomeString}-item`}
   >
-    <span>{HomeString}</span>
+    <span>Home</span>
   </CommandItem>
 );
 
 // ** TODO
 export const HomeCard = ({ navigate, ...props }: CardProps) => {
-  //yucky
   return (
     <ClickableCard
       {...props}
-      onClick={() => navigate(HomeString)} // this can be done the same as item.
+      onClick={() => navigate(HomeString)}
       cardContent={'Photo'}
       cardFooter={'Find out all the information you would need about Blair'}
       cardHeader={'About Blair'}

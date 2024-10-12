@@ -21,11 +21,10 @@ export const AboutPageItem = ({ onSelect }: PageItemProps) => (
 );
 
 export const AboutCard = ({ navigate, ...props }: CardProps) => {
-  //yucky
   return (
     <ClickableCard
       {...props}
-      onClick={() => navigate(AboutString)} // this can be done the same as item.
+      onClick={() => navigate(AboutString)}
       cardContent={'Photo'}
       cardFooter={<AboutInfo />}
       cardHeader={'About Blair'}
