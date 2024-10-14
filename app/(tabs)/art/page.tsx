@@ -23,7 +23,7 @@ export const Page = () => {
   // and above we have a description of the section
   // and each card has a title as well
   return (
-    <div className="flex flex-col">
+    <div className="flex h-full flex-col">
       <div className="pl-[12rem]">
         <Select>
           <SelectTrigger className="w-[180px]">
@@ -42,7 +42,10 @@ export const Page = () => {
       </div>
 
       <div className="flex grow items-center justify-center self-center">
-        <Carousel opts={{ loop: true }} className="w-full max-w-[48rem]">
+        <Carousel
+          opts={{ loop: true }}
+          className="w-full max-w-[48rem]  animate-in zoom-in"
+        >
           <CarouselContent className="ml-[-1rem] flex">
             {Array.from({ length: 5 }).map((_, index) => (
               <CarouselItem className="flex-[0_0_70%] p-1" key={index}>

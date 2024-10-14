@@ -90,11 +90,11 @@ const CommandList = React.forwardRef<
     <div className={'flex flex-row'}>
       <CommandEmpty>No pages found.</CommandEmpty>
 
-      <CommandGroup heading="Pages">
+      <CommandGroup heading="Pages" className="grow">
         <div>{pages}</div>
       </CommandGroup>
       <div className="border-r-2 px-4" />
-      <div className="pl-4 pt-2">
+      <div className="w-2/3 grow-0 pl-4 pt-2">
         {pages.map(
           (page) =>
             value === page.props['value'] ? page.props['sidePanel'] : ''
@@ -104,10 +104,6 @@ const CommandList = React.forwardRef<
       </div>
     </div>
   </CommandPrimitive.List>
-  // The idea here would be here we add the extracted out items, and the onvalue change etc would occur here
-  // , it would need to be passed in as well tho. and then use value to display etc, but you would need to unwrap
-  // the items(or extract the props out i guess?), which idk if that ends up being icky or not. externally it'd be fine
-  // lets give it a shot i guess. i guess children is just a prop, so im just breaking that a lil bit
 ));
 
 CommandList.displayName = CommandPrimitive.List.displayName;

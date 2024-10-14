@@ -5,9 +5,13 @@ import { CardProps, PageItemProps } from '../types';
 
 export const CoffeeFinderString = 'coffee-finder';
 
+const CoffeeFinderInfo = () => (
+  <>Okay so technically this isn't done but I'm working on it now heh</>
+);
+
 export const CoffeeFinderPageItem = ({ onSelect }: PageItemProps) => (
   <CommandItem
-    sidePanel={CoffeeFinderString}
+    sidePanel={<CoffeeFinderInfo />}
     value={CoffeeFinderString}
     onSelect={() => onSelect(`/${CoffeeFinderString}`)}
     key={`${CoffeeFinderString}-item`}
@@ -22,7 +26,7 @@ export const CoffeeFinderCard = ({ navigate, ...props }: CardProps) => {
       {...props}
       onClick={() => navigate(CoffeeFinderString)}
       cardContent={'Map Photo'}
-      cardFooter={'Find out all the information you would need about Blair'}
+      cardFooter={<CoffeeFinderInfo />}
       cardHeader={'Coffee Finder'}
       cardTitle={'Find Coffee in Australia'}
     ></ClickableCard>

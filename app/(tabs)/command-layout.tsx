@@ -61,6 +61,7 @@ export const CommandLayout = () => {
           className={'flex flex-row'}
         />
       </CommandDialog>
+      {/* TODO: theres some weird sizing issue for the right panel, plz fix */}
       <div className="container z-10 flex max-w-full flex-row justify-end p-0">
         <p className="pb-4 pr-4 text-sm text-muted-foreground">
           Navigate:{' '}

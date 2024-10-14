@@ -1,92 +1,35 @@
 'use client';
 
-import { Separator } from '@/components/ui/separator';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components//ui/card';
+import { Card } from '@/components//ui/card';
 
 import { EducationCard } from './education';
+import { Hobbies } from './hobbies';
+import { Me } from './me';
+import { Skills } from './skills';
 import { WorkCard } from './work';
 
-const CardTest = ({ index, name }: { index: number; name: string }) => (
-  <div>
-    <CardHeader className="space-y-0 pb-2">
-      <CardDescription>Today</CardDescription>
-      <CardTitle className="text-4xl tabular-nums">
-        {index}
-        {name}
-        <span className="font-sans text-sm font-normal tracking-normal text-muted-foreground">
-          offers have been sent to blair
-        </span>
-      </CardTitle>
-    </CardHeader>
-    <CardContent></CardContent>
-    <CardFooter className="flex-col items-start gap-1">
-      Bla bla bla
-      <div className="flex flex-row border-t p-4">
-        <CardDescription>Words words words words words words</CardDescription>
-        <div className="grid flex-1 auto-rows-min gap-0.5">
-          <div className="text-xs text-muted-foreground">Exercise</div>
-          <div className="flex items-baseline gap-1 text-2xl font-bold tabular-nums leading-none">
-            73
-            <span className="text-sm font-normal text-muted-foreground">
-              min
-            </span>
-          </div>
-        </div>
-        <Separator orientation="vertical" className="mx-2 h-10 w-px" />
-        <div className="grid flex-1 auto-rows-min gap-0.5">
-          <div className="text-xs text-muted-foreground">Stand</div>
-          <div className="flex items-baseline gap-1 text-2xl font-bold tabular-nums leading-none">
-            14
-            <span className="text-sm font-normal text-muted-foreground">
-              hr
-            </span>
-          </div>
-        </div>
-        <Separator orientation="vertical" className="mx-2 h-10 w-px" />
-        <div className="flex-1 auto-rows-min gap-0.5">
-          <div className="text-xs text-muted-foreground">Stand</div>
-          <div className="flex items-baseline gap-1 text-2xl font-bold tabular-nums leading-none">
-            14
-            <span className="text-sm font-normal text-muted-foreground">
-              hr
-            </span>
-          </div>
-        </div>
-      </div>
-      <CardTitle className=" tabular-num hidden text-4xl group-hover/skills:block  ">
-        hahahahahahaha
-      </CardTitle>
-    </CardFooter>
-  </div>
-);
-
+// need to look into set sizes here just bcause its adding a bit of jank when new lines are added/removed
 export const Page = () => {
   return (
-    <div className="mx-auto grid grid-cols-[4fr_4fr_4fr] grid-rows-[4fr_4fr_4fr] items-start justify-center gap-6 p-6 duration-500 sm:p-8 [&:has(>*:nth-child(1):hover)]:grid-cols-[8fr_4fr_4fr] [&:has(>*:nth-child(1):hover)]:grid-rows-[8fr_4fr_4fr] [&:has(>*:nth-child(2):hover)]:grid-cols-[4fr_6fr_4fr] [&:has(>*:nth-child(2):hover)]:grid-rows-[6fr_4fr_4fr] [&:has(>*:nth-child(3):hover)]:grid-cols-[6fr_4fr_4fr] [&:has(>*:nth-child(3):hover)]:grid-rows-[4fr_6fr_4fr] [&:has(>*:nth-child(4):hover)]:grid-cols-[4fr_6fr_4fr] [&:has(>*:nth-child(4):hover)]:grid-rows-[4fr_6fr_4fr] [&:has(>*:nth-child(5):hover)]:grid-cols-[4fr_4fr_8fr] [&:has(>*:nth-child(5):hover)]:grid-rows-[4fr_8fr_4fr]">
-      <Card className=" min-h-full min-w-full transition duration-500 ease-in-out hover:-translate-y-1 hover:bg-primary/90">
-        <p></p>
-        <CardTest index={0} name={'Me'} />
+    <div className="mx-auto grid grid-cols-[4fr_4fr_4fr] grid-rows-[4fr_4fr_4fr] items-start justify-center gap-6 p-6 duration-500 sm:p-8 [&:has(>*:nth-child(1):hover)]:grid-cols-[8fr_4fr_4fr] [&:has(>*:nth-child(1):hover)]:grid-rows-[8fr_4fr_4fr] [&:has(>*:nth-child(2):hover)]:grid-cols-[4fr_6fr_4fr] [&:has(>*:nth-child(2):hover)]:grid-rows-[6fr_4fr_4fr] [&:has(>*:nth-child(3):hover)]:grid-cols-[6fr_4fr_4fr] [&:has(>*:nth-child(3):hover)]:grid-rows-[4fr_6fr_4fr] [&:has(>*:nth-child(4):hover)]:grid-cols-[4fr_6fr_4fr] [&:has(>*:nth-child(4):hover)]:grid-rows-[4fr_6fr_4fr] [&:has(>*:nth-child(5):hover)]:grid-cols-[4fr_4fr_8fr] [&:has(>*:nth-child(5):hover)]:grid-rows-[4fr_4fr_4fr]">
+      <Card className="min-h-full min-w-full transition duration-500 ease-in-out animate-in zoom-in hover:-translate-y-1 hover:bg-primary">
+        <Me />
       </Card>
 
-      <Card className="col-span-2 flex min-h-full min-w-full flex-col duration-500 hover:-translate-y-1 hover:bg-primary/90">
-        <CardTest index={1} name={'Hobbies'} />
-      </Card>
-      <Card className="min-h-full min-w-full duration-500 hover:-translate-y-1 hover:bg-primary/90">
-        <EducationCard />
-      </Card>
-
-      <Card className="min-h-full min-w-full duration-500 hover:-translate-y-1  hover:bg-primary/90">
+      <Card className="col-span-2 min-h-full min-w-full duration-500 animate-in zoom-in hover:-translate-y-1 hover:bg-primary">
         <WorkCard />
       </Card>
-      <Card className="group/skills min-h-full min-w-full duration-500 hover:-translate-y-1  hover:bg-primary/90">
-        <CardTest index={4} name={'Skills'} />
+
+      <Card className="min-h-full min-w-full duration-500 animate-in zoom-in hover:-translate-y-1 hover:bg-primary">
+        <Skills />
+      </Card>
+
+      <Card className="min-h-full min-w-full duration-500 animate-in zoom-in hover:-translate-y-1 hover:bg-primary">
+        <Hobbies />
+      </Card>
+
+      <Card className="min-h-full min-w-full  duration-500 animate-in zoom-in hover:-translate-y-1 hover:bg-primary">
+        <EducationCard />
       </Card>
     </div>
   );

@@ -16,7 +16,15 @@ const ThemeTranslator = () => {};
 
 // make sure these are aligned with styles/globals.css
 const DARK_MODE_VAR = ['dark', 'light'] as const;
-const THEME_COLOURS = ['green', 'blue', 'red', 'grey', 'default'] as const;
+const THEME_COLOURS = [
+  'green',
+  'blue',
+  'red',
+  'violet',
+  'grey',
+  'sepia',
+  'default',
+] as const;
 
 export const AvailableThemes = DARK_MODE_VAR.flatMap((isDarkMode) =>
   THEME_COLOURS.map((colour) => colour + '-' + isDarkMode)
