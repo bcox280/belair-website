@@ -24,7 +24,7 @@ const HoverableCard = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      'group min-h-full min-w-full rounded-xl border bg-card text-card-foreground shadow duration-500 animate-in zoom-in hover:-translate-y-1 hover:bg-primary/70',
+      'group h-full w-full overflow-hidden rounded-xl border bg-card text-card-foreground shadow duration-500 animate-in zoom-in hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary',
       className
     )}
     {...props}
@@ -48,7 +48,7 @@ const ClickableCard = React.forwardRef<HTMLDivElement, ClickableCardProps>(
     <div
       ref={ref}
       className={cn(
-        'group cursor-pointer rounded-xl border bg-card text-card-foreground shadow hover:bg-primary',
+        'group cursor-pointer rounded-xl border bg-card text-card-foreground hover:shadow-2xl hover:shadow-primary',
         className
       )}
       {...props}
@@ -72,10 +72,7 @@ const CardHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn(
-      'flex flex-col space-y-1.5 p-6 group-hover:text-primary-foreground',
-      className
-    )}
+    className={cn('flex flex-col space-y-1.5 p-6', className)}
     {...props}
   />
 ));
@@ -87,10 +84,7 @@ const CardTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h3
     ref={ref}
-    className={cn(
-      'font-semibold leading-none tracking-tight group-hover:text-primary-foreground',
-      className
-    )}
+    className={cn('font-semibold leading-none tracking-tight', className)}
     {...props}
   />
 ));
@@ -103,7 +97,7 @@ const CardDescription = React.forwardRef<
   <p
     ref={ref}
     className={cn(
-      'text-sm text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring group-hover:text-muted group-hover:dark:text-muted-foreground',
+      'text-sm text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
       className
     )}
     {...props}
@@ -115,11 +109,7 @@ const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn('p-6 pt-0 group-hover:text-primary-foreground', className)}
-    {...props}
-  />
+  <div ref={ref} className={cn('p-6 pt-0', className)} {...props} />
 ));
 CardContent.displayName = 'CardContent';
 
@@ -129,10 +119,7 @@ const CardFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn(
-      'flex items-center p-6 pt-0 group-hover:text-primary-foreground ',
-      className
-    )}
+    className={cn('flex items-center p-6 pt-0', className)}
     {...props}
   />
 ));

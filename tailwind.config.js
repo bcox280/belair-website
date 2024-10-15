@@ -57,6 +57,7 @@ module.exports = {
         sans: ['var(--font-sans)', ...fontFamily.sans],
       },
       transitionDelay: {
+        1300: '1300ms',
         2000: '2000ms',
         2300: '2300ms',
         2600: '2600ms',
@@ -65,6 +66,19 @@ module.exports = {
         2000: '2000ms',
       },
       keyframes: {
+        'text-glow': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+        siren: {
+          '0%': { '--angle': '0deg' },
+          '100%': { '--angle': '360deg' },
+        },
+        friend: {
+          '0%': { transform: 'translateY(-20%) translateX(-50%)' },
+          '100%': { transform: 'translateY(300%) translateX(-50%)' },
+        },
         'accordion-down': {
           from: { height: '0' },
           to: { height: 'var(--radix-accordion-content-height)' },
@@ -114,11 +128,23 @@ module.exports = {
             opacity: '0',
           },
         },
+        ghost: {
+          '0%': {
+            transform: 'rotate(0deg)',
+          },
+          '100%': {
+            transform: 'rotate(360deg)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
+        'glow-text': 'text-glow 5s infinite',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        siren: 'siren 2s linear infinite',
+        ghost: 'ghost 1s linear infinite',
         raindrop: 'raindrop 2s',
+        friend: 'friend 2s ease-in-out infinite',
         ripple: 'ripple 4s cubic-bezier(.01,.47,.96,.58)',
         // this is for the button click on the loading page. 3s is aligned with that. two animation libs are interfering with
         // doing animation timing in css, so resorting to setting here.

@@ -11,7 +11,7 @@ export const Me = () => (
     <CardHeader className="space-y-0 pb-2">
       <CardTitle className="text-4xl tabular-nums">
         Me{' '}
-        <span className="font-sans text-sm font-normal tracking-normal text-muted-foreground group-hover:text-muted group-hover:dark:text-foreground">
+        <span className="font-sans text-sm font-normal tracking-normal text-muted-foreground">
           (Me being Blair)
         </span>
       </CardTitle>

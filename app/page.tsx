@@ -12,18 +12,20 @@ export const Page = () => {
   const [clicked, setClicked] = useState(false);
 
   return (
-    <div className="overscroll-none">
+    <div className="flex h-screen flex-col overflow-hidden overscroll-none">
       <ThemeToggle />
-      <div className="flex h-screen items-center justify-center">
+      <div className="flex h-full items-center justify-center">
         <Button
-          variant={'outline'}
-          className="relative z-10 flex"
+          variant={'enter'}
+          className="z-10 duration-300 hover:-translate-y-1 hover:scale-110 hover:animate-pulse"
           onClick={() => {
             setClicked(true);
             setTimeout(() => router.push('/home'), 3000);
           }}
         >
-          Enter
+          <span className="absolute bottom-0 left-0 h-48 w-full origin-bottom translate-y-full overflow-hidden rounded-full bg-primary transition-all duration-500 ease-in-out group-hover:translate-y-14"></span>
+
+          <span className="z-10 font-semibold text-foreground">Enter</span>
           {/** animation isnt on parent because then delay cant be overwritten. just a tailwind gotcha */}
           {clicked ? (
             <div className="absolute inline-flex h-full w-full *:absolute *:inline-flex *:h-full *:w-full *:rounded-md *:border-2 *:border-primary *:opacity-0">

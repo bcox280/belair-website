@@ -17,6 +17,7 @@ import { HomePageItem } from './home/about-descriptors';
 export const CommandLayout = () => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
+  const [hasBeenUsed, setHasBeenUsed] = useState(false);
   const [value, setValue] = useState('art');
 
   useEffect(() => {
@@ -47,10 +48,15 @@ export const CommandLayout = () => {
   ];
 
   return (
-    <>
+    <div className="container z-10 flex max-w-full flex-row justify-end p-0">
       <CommandDialog
         open={open}
-        onOpenChange={setOpen}
+        onOpenChange={() => {
+          setOpen(true);
+          if (!hasBeenUsed) {
+            setHasBeenUsed(true);
+          }
+        }}
         value={value}
         onValueChange={(v) => setValue(v)}
       >
@@ -61,15 +67,14 @@ export const CommandLayout = () => {
           className={'flex flex-row'}
         />
       </CommandDialog>
-      {/* TODO: theres some weird sizing issue for the right panel, plz fix */}
-      <div className="container z-10 flex max-w-full flex-row justify-end p-0">
-        <p className="pb-4 pr-4 text-sm text-muted-foreground">
-          Navigate:{' '}
-          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-            <span className="text-xs">⌘</span>J
-          </kbd>
-        </p>
+      <div
+        className={`flex gap-2 pb-4 pr-4 text-sm text-muted-foreground ${!hasBeenUsed ? 'animate-pulse' : ''}`}
+      >
+        Navigate:{' '}
+        <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+          <span className="text-xs">⌘</span>J
+        </kbd>
       </div>
-    </>
+    </div>
   );
 };

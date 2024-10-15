@@ -2,9 +2,6 @@
 
 import '@/styles/globals.css';
 
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-
 import { ThemeToggle } from '@/components/theme-toggle';
 
 import { CommandLayout } from './command-layout';
@@ -15,10 +12,12 @@ interface RootLayoutProps {
 
 export const RootLayout = ({ children }: RootLayoutProps) => {
   return (
-    <div className="overscroll-none">
-      <ThemeToggle />
-      <div className="h-screen">{children}</div>
-      <CommandLayout />
+    <div className="overflow-hidden overscroll-none">
+      <div className="flex h-screen flex-col justify-between">
+        <ThemeToggle />
+        {children}
+        <CommandLayout />
+      </div>
     </div>
   );
 };
