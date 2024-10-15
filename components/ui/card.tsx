@@ -17,6 +17,21 @@ const Card = React.forwardRef<
 ));
 Card.displayName = 'Card';
 
+const HoverableCard = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      'group min-h-full min-w-full rounded-xl border bg-card text-card-foreground shadow duration-500 animate-in zoom-in hover:-translate-y-1 hover:bg-primary/70',
+      className
+    )}
+    {...props}
+  />
+));
+HoverableCard.displayName = 'HoverableCard';
+
 export interface ClickableCardProps
   extends React.HTMLAttributes<HTMLDivElement> {
   cardFooter?: React.ReactNode;
@@ -88,7 +103,7 @@ const CardDescription = React.forwardRef<
   <p
     ref={ref}
     className={cn(
-      'text-sm text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring group-hover:text-muted',
+      'text-sm text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring group-hover:text-muted group-hover:dark:text-muted-foreground',
       className
     )}
     {...props}
@@ -115,7 +130,7 @@ const CardFooter = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      'flex items-center p-6 pt-0 group-hover:text-primary-foreground',
+      'flex items-center p-6 pt-0 group-hover:text-primary-foreground ',
       className
     )}
     {...props}
@@ -125,6 +140,7 @@ CardFooter.displayName = 'CardFooter';
 
 export {
   ClickableCard,
+  HoverableCard,
   Card,
   CardHeader,
   CardFooter,

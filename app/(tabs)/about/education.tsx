@@ -4,11 +4,12 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
+  HoverableCard,
 } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 
 export const EducationCard = () => (
-  <div className="group">
+  <HoverableCard>
     <CardHeader className="space-y-0 pb-2">
       <CardDescription> Where did Blair go to school?</CardDescription>
       <CardTitle className="text-4xl tabular-nums">Education</CardTitle>
@@ -24,7 +25,7 @@ export const EducationCard = () => (
           <div className="flex items-baseline gap-1 pr-4 text-2xl font-bold tabular-nums leading-none">
             Start
           </div>
-          <div className="text-xs text-muted-foreground group-hover:text-muted">
+          <div className="text-xs text-muted-foreground group-hover:text-muted group-hover:dark:text-foreground">
             March 2015
           </div>
         </div>
@@ -33,7 +34,7 @@ export const EducationCard = () => (
           <div className="flex items-baseline gap-1 text-2xl font-bold tabular-nums leading-none">
             Finish
           </div>
-          <div className="text-nowrap text-xs text-muted-foreground group-hover:text-muted">
+          <div className="text-nowrap text-xs text-muted-foreground group-hover:text-muted group-hover:dark:text-foreground">
             November 2020
           </div>
         </div>
@@ -47,7 +48,7 @@ export const EducationCard = () => (
           <div className="flex items-baseline gap-1 text-2xl font-bold tabular-nums leading-none">
             Start
           </div>
-          <div className="text-xs text-muted-foreground group-hover:text-muted">
+          <div className="text-xs text-muted-foreground group-hover:text-muted group-hover:dark:text-foreground">
             Janch 2009
           </div>
         </div>
@@ -56,11 +57,11 @@ export const EducationCard = () => (
           <div className="flex items-baseline gap-1 text-2xl font-bold tabular-nums leading-none">
             Finish
           </div>
-          <div className="text-xs text-muted-foreground group-hover:text-muted">
+          <div className="text-xs text-muted-foreground group-hover:text-muted group-hover:dark:text-foreground">
             Jan 2014
           </div>
         </div>
       </div>
     </CardFooter>
-  </div>
+  </HoverableCard>
 );

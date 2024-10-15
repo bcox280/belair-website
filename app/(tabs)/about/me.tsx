@@ -3,14 +3,15 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
+  HoverableCard,
 } from '@/components/ui/card';
 
 export const Me = () => (
-  <div>
+  <HoverableCard>
     <CardHeader className="space-y-0 pb-2">
       <CardTitle className="text-4xl tabular-nums">
         Me{' '}
-        <span className="font-sans text-sm font-normal tracking-normal text-muted-foreground group-hover:text-muted">
+        <span className="font-sans text-sm font-normal tracking-normal text-muted-foreground group-hover:text-muted group-hover:dark:text-foreground">
           (Me being Blair)
         </span>
       </CardTitle>
@@ -24,5 +25,5 @@ export const Me = () => (
       office) environment to further develop my skills, create intuitive front
       end architectures and to continue creating beautiful UI and UXs
     </CardFooter>
-  </div>
+  </HoverableCard>
 );

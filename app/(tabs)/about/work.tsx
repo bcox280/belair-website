@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { forwardRef, useState } from 'react';
 import { ChevronsUpDown } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -8,6 +8,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
+  HoverableCard,
 } from '@/components/ui/card';
 import {
   Collapsible,
@@ -16,12 +17,12 @@ import {
 } from '@/components/ui/collapsible';
 import { Separator } from '@/components/ui/separator';
 
-export const WorkCard = () => {
+export const WorkCard = ({ className }: { className: string }) => {
   const [isAtlassianOpen, setIsAtlassianOpen] = useState(false);
   const [isOlympicOpen, setIsOlympicOpen] = useState(false);
 
   return (
-    <div>
+    <HoverableCard className={className}>
       <CardHeader className="space-y-0 pb-2">
         <CardTitle className="text-4xl tabular-nums">Work Experience</CardTitle>
       </CardHeader>
@@ -97,6 +98,6 @@ export const WorkCard = () => {
           </ul>
         </Collapsible>
       </CardFooter>
-    </div>
+    </HoverableCard>
   );
 };

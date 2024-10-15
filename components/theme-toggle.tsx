@@ -12,8 +12,6 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
-const ThemeTranslator = () => {};
-
 // make sure these are aligned with styles/globals.css
 const DARK_MODE_VAR = ['dark', 'light'] as const;
 const THEME_COLOURS = [
@@ -21,7 +19,6 @@ const THEME_COLOURS = [
   'blue',
   'red',
   'violet',
-  'grey',
   'sepia',
   'default',
 ] as const;
