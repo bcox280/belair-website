@@ -128,12 +128,130 @@ module.exports = {
             opacity: '0',
           },
         },
-        ghost: {
+        'ghost-tl': {
           '0%': {
+            'transform-origin': '50% 50%',
             transform: 'rotate(0deg)',
           },
+          '5%': {
+            'transform-origin': '50% 50%',
+            transform: 'rotate(0deg) translateY(-10%) translateX(-10%)',
+          },
+          '10%': {
+            'transform-origin': '50% 50%',
+            transform: 'rotate(0deg) translateY(0%) translateX(0%)',
+          },
+          '25%': {
+            transform: 'rotate(-90deg)',
+            'transform-origin': '50% 50%',
+          },
+          '50%': {
+            transform: 'rotate(-180deg)',
+            'transform-origin': '50% 50%',
+          },
+          '75%': {
+            transform: 'rotate(-270deg)',
+            'transform-origin': '50% 50%',
+          },
           '100%': {
-            transform: 'rotate(360deg)',
+            transform: 'rotate(-360deg)',
+            'transform-origin': '50% 50%',
+          },
+        },
+        'ghost-tr': {
+          '0%': {
+            'transform-origin': '50% 50%',
+            transform: 'rotate(0deg)',
+          },
+          '5%': {
+            'transform-origin': '50% 50%',
+            transform: 'rotate(0deg) translateY(-10%) translateX(10%)',
+          },
+          '10%': {
+            'transform-origin': '50% 50%',
+            transform: 'rotate(0deg) translateY(0%) translateX(0%)',
+          },
+          '25%': {
+            transform: 'rotate(-90deg)',
+            'transform-origin': '50% 50%',
+          },
+          '50%': {
+            transform: 'rotate(-180deg)',
+            'transform-origin': '50% 50%',
+          },
+          '75%': {
+            transform: 'rotate(-270deg)',
+            'transform-origin': '50% 50%',
+          },
+          '100%': {
+            transform: 'rotate(-360deg)',
+            'transform-origin': '50% 50%',
+          },
+        },
+        'ghost-bl': {
+          '0%': {
+            'transform-origin': '50% 50%',
+            transform: 'rotate(0deg)',
+          },
+          '5%': {
+            'transform-origin': '50% 50%',
+            transform: 'rotate(0deg) translateY(10%) translateX(-10%)',
+          },
+          '10%': {
+            'transform-origin': '50% 50%',
+            transform: 'rotate(0deg) translateY(0%) translateX(0%)',
+          },
+          '25%': {
+            transform: 'rotate(-90deg)',
+            'transform-origin': '50% 50%',
+          },
+          '50%': {
+            transform: 'rotate(-180deg)',
+            'transform-origin': '50% 50%',
+          },
+          '75%': {
+            transform: 'rotate(-270deg)',
+            'transform-origin': '50% 50%',
+          },
+          '100%': {
+            transform: 'rotate(-360deg)',
+            'transform-origin': '50% 50%',
+          },
+        },
+        'ghost-br': {
+          '0%': {
+            'transform-origin': '50% 50%',
+            transform: 'rotate(0deg)',
+          },
+          '5%': {
+            'transform-origin': '50% 50%',
+            transform: 'rotate(0deg) translateY(10%) translateX(10%)',
+          },
+          '10%': {
+            'transform-origin': '50% 50%',
+            transform: 'rotate(0deg) translateY(0%) translateX(0%)',
+          },
+          '25%': {
+            transform: 'rotate(-90deg)',
+            'transform-origin': '50% 50%',
+          },
+          '50%': {
+            transform: 'rotate(-180deg)',
+            'transform-origin': '50% 50%',
+          },
+          '75%': {
+            transform: 'rotate(-270deg)',
+            'transform-origin': '50% 50%',
+          },
+          '100%': {
+            transform: 'rotate(-360deg)',
+            'transform-origin': '50% 50%',
+          },
+        },
+        middle: {
+          to: {
+            'transform-origin': '50% 50%',
+            transform: 'translateX(5000%)',
           },
         },
       },
@@ -142,7 +260,11 @@ module.exports = {
         'glow-text': 'text-glow 5s infinite',
         'accordion-up': 'accordion-up 0.2s ease-out',
         siren: 'siren 2s linear infinite',
-        ghost: 'ghost 1s linear infinite',
+        'ghost-tl': 'ghost-tl 5s linear infinite',
+        'ghost-tr': 'ghost-tr 5s linear infinite',
+        'ghost-bl': 'ghost-bl 5s linear infinite',
+        'ghost-br': 'ghost-br 5s linear infinite',
+        middle: 'middle 5s linear infinite',
         raindrop: 'raindrop 2s',
         friend: 'friend 2s ease-in-out infinite',
         ripple: 'ripple 4s cubic-bezier(.01,.47,.96,.58)',
