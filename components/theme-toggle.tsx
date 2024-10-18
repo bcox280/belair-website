@@ -90,6 +90,7 @@ export const ThemeToggle = () => {
             <DropdownMenuCheckboxItem
               checked={themeCombo.colour === colour}
               onCheckedChange={() => setThemeColour(colour)}
+              key={colour}
             >
               <div className="first-letter:capitalize">{colour}</div>
             </DropdownMenuCheckboxItem>

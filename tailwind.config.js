@@ -129,123 +129,63 @@ module.exports = {
           },
         },
         'ghost-tl': {
-          '0%': {
-            'transform-origin': '50% 50%',
-            transform: 'rotate(0deg)',
-          },
-          '5%': {
-            'transform-origin': '50% 50%',
-            transform: 'rotate(0deg) translateY(-10%) translateX(-10%)',
-          },
-          '10%': {
+          '0%, 4%, 10%, 32%, 50%, 54%, 60%, 68%, 72%, 82%, 90%, 100%': {
             'transform-origin': '50% 50%',
             transform: 'rotate(0deg) translateY(0%) translateX(0%)',
           },
-          '25%': {
-            transform: 'rotate(-90deg)',
-            'transform-origin': '50% 50%',
+          '2%, 52%, 70%, 86%': {
+            transform: 'rotate(0deg) translateY(-5%) translateX(-5%)',
           },
-          '50%': {
-            transform: 'rotate(-180deg)',
-            'transform-origin': '50% 50%',
+          '8%, 12%, 28%, 58%': {
+            transform: 'rotate(0deg) translateY(-10%) translateX(-10%)',
           },
-          '75%': {
-            transform: 'rotate(-270deg)',
-            'transform-origin': '50% 50%',
-          },
-          '100%': {
-            transform: 'rotate(-360deg)',
-            'transform-origin': '50% 50%',
+          '20%': {
+            transform: 'rotate(-90deg) translateY(-10%) translateX(-10%)',
           },
         },
         'ghost-tr': {
-          '0%': {
-            'transform-origin': '50% 50%',
-            transform: 'rotate(0deg)',
-          },
-          '5%': {
-            'transform-origin': '50% 50%',
-            transform: 'rotate(0deg) translateY(-10%) translateX(10%)',
-          },
-          '10%': {
+          '0%, 4%, 10%, 32%, 50%, 54%, 60%, 68%, 72%, 82%, 90%, 100%': {
             'transform-origin': '50% 50%',
             transform: 'rotate(0deg) translateY(0%) translateX(0%)',
           },
-          '25%': {
-            transform: 'rotate(-90deg)',
-            'transform-origin': '50% 50%',
+          '2%, 52%, 70%, 86%': {
+            transform: 'rotate(0deg) translateY(-5%) translateX(5%)',
           },
-          '50%': {
-            transform: 'rotate(-180deg)',
-            'transform-origin': '50% 50%',
+          '8%, 12%, 28%, 58%': {
+            transform: 'rotate(0deg) translateY(-10%) translateX(10%)',
           },
-          '75%': {
-            transform: 'rotate(-270deg)',
-            'transform-origin': '50% 50%',
-          },
-          '100%': {
-            transform: 'rotate(-360deg)',
-            'transform-origin': '50% 50%',
+          '20%': {
+            transform: 'rotate(-90deg) translateY(-10%) translateX(10%)',
           },
         },
         'ghost-bl': {
-          '0%': {
-            'transform-origin': '50% 50%',
-            transform: 'rotate(0deg)',
-          },
-          '5%': {
-            'transform-origin': '50% 50%',
-            transform: 'rotate(0deg) translateY(10%) translateX(-10%)',
-          },
-          '10%': {
+          '0%, 4%, 10%, 32%, 50%, 54%, 60%, 68%, 72%, 82%, 90%, 100%': {
             'transform-origin': '50% 50%',
             transform: 'rotate(0deg) translateY(0%) translateX(0%)',
           },
-          '25%': {
-            transform: 'rotate(-90deg)',
-            'transform-origin': '50% 50%',
+          '2%, 52%, 70%, 86%': {
+            transform: 'rotate(0deg) translateY(5%) translateX(-5%)',
           },
-          '50%': {
-            transform: 'rotate(-180deg)',
-            'transform-origin': '50% 50%',
+          '8%, 12%, 28%, 58%': {
+            transform: 'rotate(0deg) translateY(10%) translateX(-10%)',
           },
-          '75%': {
-            transform: 'rotate(-270deg)',
-            'transform-origin': '50% 50%',
-          },
-          '100%': {
-            transform: 'rotate(-360deg)',
-            'transform-origin': '50% 50%',
+          '20%': {
+            transform: 'rotate(-90deg)  translateY(10%) translateX(-10%)',
           },
         },
         'ghost-br': {
-          '0%': {
-            'transform-origin': '50% 50%',
-            transform: 'rotate(0deg)',
-          },
-          '5%': {
-            'transform-origin': '50% 50%',
-            transform: 'rotate(0deg) translateY(10%) translateX(10%)',
-          },
-          '10%': {
+          '0%, 4%, 10%, 32%, 50%, 54%, 60%, 68%, 72%, 82%, 90%, 100%': {
             'transform-origin': '50% 50%',
             transform: 'rotate(0deg) translateY(0%) translateX(0%)',
           },
-          '25%': {
-            transform: 'rotate(-90deg)',
-            'transform-origin': '50% 50%',
+          '2%, 52%, 70%, 86%': {
+            transform: 'rotate(0deg) translateY(5%) translateX(5%)',
           },
-          '50%': {
-            transform: 'rotate(-180deg)',
-            'transform-origin': '50% 50%',
+          '8%, 12%, 28%, 58%': {
+            transform: 'rotate(0deg) translateY(10%) translateX(10%)',
           },
-          '75%': {
-            transform: 'rotate(-270deg)',
-            'transform-origin': '50% 50%',
-          },
-          '100%': {
-            transform: 'rotate(-360deg)',
-            'transform-origin': '50% 50%',
+          '20%': {
+            transform: 'rotate(-90deg) translateY(10%) translateX(10%)',
           },
         },
         middle: {
