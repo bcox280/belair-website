@@ -2,8 +2,8 @@ import { cn } from '@/lib/utils';
 
 const GhostIcon = (props: { className: string }) => (
   <svg
-    fill="#ffffff"
     width="800px"
+    fill="#ffffff"
     height="800px"
     viewBox="0 0 32 32"
     version="1.1"
@@ -30,45 +30,28 @@ const GhostIcon = (props: { className: string }) => (
       </g>
       {/* end of arms */}
 
-      <g className={'animate-none'}>
+      <g className={'animate-none *:origin-center *:scale-125 *:fill-cyan-400'}>
         <path
-          stroke={'white'}
-          strokeWidth={'0.3'}
-          fill="white"
-          transform="scale(1.2 1.2) origin(50%, 50%) translate(-0.6 0)"
+          strokeWidth={'0.5'}
           d="M15.673 15.036v0.628l-0.506 0.5h-0.647v-0.25l1.153-0.877z"
         ></path>
         <path
-          stroke={'white'}
-          strokeWidth={'0.3'}
-          fill="white"
-          transform="scale(1.2 1.2) origin(50%, 50%) translate(-0.6 0)"
+          strokeWidth={'0.5'}
           d="M15.673 17.291v-0.628l-0.506-0.5h-0.647v0.25l1.153 0.878z"
         ></path>
         <path
-          stroke={'white'}
-          strokeWidth={'0.3'}
-          transform="scale(1.2 1.2) origin(50%, 50%) translate(0.6 0)"
-          fill="white"
+          strokeWidth={'0.5'}
           d="M16.301 15.036v0.628l0.506 0.5h0.647v-0.25l-1.153-0.877z"
         ></path>
         <path
-          stroke={'white'}
-          strokeWidth={'0.3'}
-          transform="scale(1.2 1.2) origin(50%, 50%) translate(0.6 0)"
-          fill="white"
+          strokeWidth={'0.5'}
           d="M16.301 17.291v-0.628l0.506-0.5h0.647v0.25l-1.153 0.878z"
         ></path>
         <path
-          stroke={'white'}
           strokeWidth={'0.1'}
-          fill="white"
           d="M16.301 16.227c0 0.173-0.14 0.314-0.314 0.314s-0.314-0.14-0.314-0.314c0-0.173 0.14-0.314 0.314-0.314s0.314 0.14 0.314 0.314z"
         ></path>
-        <path
-          fill="white"
-          d="M16.013 19.705c-1.924 0-3.484-1.56-3.484-3.484s1.56-3.484 3.484-3.484c1.924 0 3.484 1.56 3.484 3.484v0c-0.004 1.923-1.561 3.481-3.484 3.484h-0zM16.013 13.377c-1.571 0-2.844 1.273-2.844 2.844s1.273 2.844 2.844 2.844c1.571 0 2.844-1.273 2.844-2.844v0c0-1.571-1.273-2.844-2.844-2.844v0z"
-        ></path>
+        <path d="M16.013 19.705c-1.924 0-3.484-1.56-3.484-3.484s1.56-3.484 3.484-3.484c1.924 0 3.484 1.56 3.484 3.484v0c-0.004 1.923-1.561 3.481-3.484 3.484h-0zM16.013 13.377c-1.571 0-2.844 1.273-2.844 2.844s1.273 2.844 2.844 2.844c1.571 0 2.844-1.273 2.844-2.844v0c0-1.571-1.273-2.844-2.844-2.844v0z"></path>
       </g>
     </g>
   </svg>

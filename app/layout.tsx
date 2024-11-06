@@ -1,6 +1,7 @@
 import '@/styles/globals.css';
 
 import { Metadata } from 'next';
+import Script from 'next/script';
 
 import { siteConfig } from '@/config/site';
 import { fontSans } from '@/lib/fonts';
@@ -24,7 +25,7 @@ export const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
-        <head />
+        <head></head>
         <body
           className={cn(
             'min-h-screen overflow-hidden overscroll-none bg-background font-sans antialiased',

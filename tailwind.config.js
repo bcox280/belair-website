@@ -3,7 +3,11 @@ const { fontFamily } = require('tailwindcss/defaultTheme');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ['selector', ['[data-theme*="dark"]']],
-  content: ['app/**/*.{ts,tsx}', 'components/**/*.{ts,tsx}'],
+  content: [
+    'app/**/*.{ts,tsx}',
+    'components/**/*.{ts,tsx}',
+    'public/**/*.{ts,tsx}',
+  ],
   theme: {
     container: {
       center: true,
@@ -61,6 +65,7 @@ module.exports = {
         2000: '2000ms',
         2300: '2300ms',
         2600: '2600ms',
+        6000: '6000ms',
       },
       transitionDuration: {
         2000: '2000ms',
@@ -188,6 +193,130 @@ module.exports = {
             transform: 'rotate(-90deg) translateY(10%) translateX(10%)',
           },
         },
+        'ghost-micro-movements': {
+          '0%, 12.5%, 25%, 37.5%, 50%, 62.5%, 75%, 87.5%, 100%': {
+            'transform-origin': '50% 50%',
+            transform: 'translateY(0%) translateX(0%)',
+          },
+          // these first lil bits are for movement when moving around the page
+          '2%': {
+            transform: 'translateY(-2%) translateX(-2%)',
+          },
+          '4%': {
+            transform: 'translateY(-4%) translateX(4%)',
+          },
+          '7%': {
+            transform: 'translateY(3%) translateX(2%)',
+          },
+          '9%': {
+            transform: 'translateY(-2%) translateX(5%)',
+          },
+          // stationary move
+          '14%': {
+            transform: 'translateY(-10%) translateX(-10%)',
+          },
+          '18%': {
+            transform: 'translateY(-13%) translateX(-8%)',
+          },
+          '20%': {
+            transform: 'translateY(-8%) translateX(8%)',
+          },
+          '22%': {
+            transform: 'translateY(5%) translateX(5%)',
+          },
+          // moving move
+          '27%': {
+            transform: 'translateY(-4%) translateX(4%)',
+          },
+          '30%': {
+            transform: 'translateY(-5%) translateX(2%)',
+          },
+          '32%': {
+            transform: 'translateY(-6%) translateX(3%)',
+          },
+          '34%': {
+            transform: 'translateY(-3%) translateX(2%)',
+          },
+          // stationary move
+          '39%': {
+            transform: 'translateY(6%) translateX(2%)',
+          },
+          '42%': {
+            transform: 'translateY(7%) translateX(5%)',
+          },
+          '44%': {
+            transform: 'translateY(-8%) translateX(-8%)',
+          },
+          '48%': {
+            transform: 'translateY(-7%) translateX(2%)',
+          },
+          // moving move
+          '52%': {
+            transform: 'translateY(2%) translateX(5%)',
+          },
+          '54%': {
+            transform: 'translateY(-3%) translateX(0%)',
+          },
+          '57%': {
+            transform: 'translateY(0%) translateX(2%)',
+          },
+          '59%': {
+            transform: 'translateY(-2%) translateX(5%)',
+          },
+          // stationary move
+          '65%': {
+            transform: 'translateY(3%) translateX(-5%)',
+          },
+          '68%': {
+            transform: 'translateY(-10%) translateX(-8%)',
+          },
+          '70%': {
+            transform: 'translateY(-8%) translateX(-4%)',
+          },
+          '72%': {
+            transform: 'translateY(3%) translateX(-2%)',
+          }, // moving move
+          '77%': {
+            transform: 'translateY(0%) translateX(2%)',
+          },
+          '79%': {
+            transform: 'translateY(5%) translateX(2%)',
+          },
+          '81%': {
+            transform: 'translateY(3%) translateX(4%)',
+          },
+          '84%': {
+            transform: 'translateY(-2%) translateX(1%)',
+          },
+          // stationary move
+          '89%': {
+            transform: 'translateY(5%) translateX(0%)',
+          },
+          '91%': {
+            transform: 'translateY(3%) translateX(-2%)',
+          },
+          '95%': {
+            transform: 'translateY(4%) translateX(-3%)',
+          },
+          '97%': {
+            transform: 'translateY(-5%) translateX(-2%)',
+          },
+        },
+        'flip-words': {
+          // pretty sure there's an easier way to do this lol. another days prob
+          '8.33%': { transform: 'translateY(-112%)' },
+          '16.66%': { transform: 'translateY(-100%)' },
+          '25%': { transform: 'translateY(-212%)' },
+          '33.33%': { transform: 'translateY(-200%)' },
+          '41.66%': { transform: 'translateY(-312%)' },
+          '50%': { transform: 'translateY(-300%)' },
+          '58.33%': { transform: 'translateY(-412%)' },
+          '66.66%': { transform: 'translateY(-400%)' },
+          '75%': { transform: 'translateY(-512%)' },
+          '83.33%': { transform: 'translateY(-500%)' },
+          '91.66%': { transform: 'translateY(-612%)' },
+          '100%': { transform: 'translateY(-600%)' },
+        },
         middle: {
           to: {
             'transform-origin': '50% 50%',
@@ -204,7 +333,10 @@ module.exports = {
         'ghost-tr': 'ghost-tr 5s linear infinite',
         'ghost-bl': 'ghost-bl 5s linear infinite',
         'ghost-br': 'ghost-br 5s linear infinite',
+        'ghost-micro-movements':
+          'ghost-micro-movements 24s ease-in-out infinite',
         middle: 'middle 5s linear infinite',
+        'flip-words': 'flip-words 8s infinite',
         raindrop: 'raindrop 2s',
         friend: 'friend 2s ease-in-out infinite',
         ripple: 'ripple 4s cubic-bezier(.01,.47,.96,.58)',

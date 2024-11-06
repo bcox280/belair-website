@@ -17,6 +17,22 @@ import {
 } from '@/components/ui/collapsible';
 import { Separator } from '@/components/ui/separator';
 
+const AtlassianProject1 =
+  "Designed and implemented a front end analytics measuring solution  which provided functionality for recording page render success/failures and timings, allowing us to judge the efficiency and reliability when rolling out new features and it's still the functionality we use to this date.";
+const AtlassianProject2 =
+  'Feature lead a project to allow customers to enable marketplace developers to view their production app logs while protecting PII. This lead to developers having an increased ability to debug their apps through our new logs page. Within a year, over half of all installed apps were sharing logs.';
+const AtlassianProject3 =
+  'After identifying a lack of a safe space with communicating about technical and non technical issues, I proposed and started running a lightweight agendaless meeting (Lean Coffee) to help acknowledge and solve these issues. This became a staple of our team and an unmissable meeting for our managers and existed for over two years.';
+const AtlassianProject4 =
+  'Provided mentorship to new team members, frequently pairing with them to help provide project/feature context and grow their front end skills. I mentored two new graduates and consistently offered and reached out to any new starters (including any in more senior positions) to provide them with structure while starting in a remote workplace';
+
+const OlympicProject1 =
+  'Designed and developed an architecture capable of providing updates on data in real-time to a Web App through the use of SignalR, Azure Functions and Azure Service Bus Queues';
+const OlympicProject2 =
+  'Modified existing sections of Olympics Document Exchange Web App to utilize real-time updates by supplying a service which managed a websockets connection to the API';
+const OlympicProject3 =
+  'Helped train the new interns to be accustomed to the technologies within Olympic and assisted with other employees in solving technical problems';
+
 export const WorkCard = ({ className }: { className: string }) => {
   const [isAtlassianOpen, setIsAtlassianOpen] = useState(false);
   const [isOlympicOpen, setIsOlympicOpen] = useState(false);
@@ -39,7 +55,7 @@ export const WorkCard = ({ className }: { className: string }) => {
         <Collapsible
           open={isAtlassianOpen}
           onOpenChange={setIsAtlassianOpen}
-          className="w-[350px] space-y-2"
+          className="w-full space-y-2"
         >
           <div className="flex items-center justify-between space-x-4 px-4">
             <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
@@ -54,10 +70,11 @@ export const WorkCard = ({ className }: { className: string }) => {
           </div>
 
           <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-            <li className="px-4 py-3 text-sm">Project 1</li>
+            <li className="px-4 py-3 text-sm">{AtlassianProject1}</li>
             <CollapsibleContent className="space-y-2">
-              <li className="px-4 py-3 text-sm">Project 2</li>
-              <li className="px-4 py-3 text-sm">Project 3</li>
+              <li className="px-4 py-3 text-sm">{AtlassianProject2}</li>
+              <li className="px-4 py-3 text-sm">{AtlassianProject3}</li>
+              <li className="px-4 py-3 text-sm">{AtlassianProject4}</li>
             </CollapsibleContent>
           </ul>
         </Collapsible>
@@ -75,7 +92,7 @@ export const WorkCard = ({ className }: { className: string }) => {
         <Collapsible
           open={isOlympicOpen}
           onOpenChange={setIsOlympicOpen}
-          className="w-[350px] space-y-2"
+          className="w-full space-y-2"
         >
           <div className="flex items-center justify-between space-x-4 px-4">
             <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
@@ -90,10 +107,10 @@ export const WorkCard = ({ className }: { className: string }) => {
           </div>
 
           <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-            <li className="px-4 py-3 text-sm">Project 1</li>
+            <li className="px-4 py-3 text-sm">{OlympicProject1}</li>
             <CollapsibleContent className="space-y-2">
-              <li className="px-4 py-3 text-sm">Project 2</li>
-              <li className="px-4 py-3 text-sm">Project 3</li>
+              <li className="px-4 py-3 text-sm">{OlympicProject2}</li>
+              <li className="px-4 py-3 text-sm">{OlympicProject3}</li>
             </CollapsibleContent>
           </ul>
         </Collapsible>

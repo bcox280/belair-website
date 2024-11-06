@@ -24,7 +24,7 @@ const HoverableCard = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      'group h-full w-full overflow-hidden rounded-xl border bg-card text-card-foreground shadow duration-500 animate-in zoom-in hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary',
+      'group h-full w-full overflow-auto rounded-xl border bg-card text-card-foreground shadow duration-500 animate-in zoom-in hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary',
       className
     )}
     {...props}

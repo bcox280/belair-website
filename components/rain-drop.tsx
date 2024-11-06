@@ -1,6 +1,6 @@
 import RainDropIcon from '@/public/icons/rain';
 
-import { getRandNumberBetween, getWindowDimensions } from '@/lib/window';
+import { getRandNumberBetween, useWindowDimensions } from '@/lib/window';
 
 type Size = 'large' | 'medium' | 'small' | 'x-small';
 
@@ -18,7 +18,7 @@ const calcSizeDisplacement = (size: Size) =>
   2;
 
 const RainDrop = ({ size }: RainDropProps) => {
-  const { width, height } = getWindowDimensions();
+  const { width, height } = useWindowDimensions();
 
   const displacement = calcSizeDisplacement(size);
 
