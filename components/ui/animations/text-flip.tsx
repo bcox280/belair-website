@@ -2,17 +2,23 @@
 
 import { useEffect, useMemo, useRef } from 'react';
 
-export const BlairTitleText = () => {
+import { cn } from '@/lib/utils';
+
+interface TitleTextProps {
+  className?: string;
+}
+
+export const BlairTitleText = (className: TitleTextProps) => {
   // don't like this, repeat first and last....
   const words = useMemo(
     () => [
-      'Frontend Engineer',
-      'Nerd',
-      'Board game fanatic',
-      'Cook',
-      'Barista',
-      'Baker',
-      'Frontend Engineer',
+      'a Frontend Engineer',
+      'a Nerd',
+      'a Board game fanatic',
+      'a Cook',
+      'a Barista',
+      'a Baker',
+      'Looking to be Hired',
     ],
     []
   );
@@ -41,11 +47,16 @@ export const BlairTitleText = () => {
   }, [words]);
 
   return (
-    <div className="box-content flex gap-4 text-3xl font-semibold">
-      <p className="text-foreground">Blair: </p>
+    <div
+      className={cn(
+        className,
+        'box-content flex flex-col gap-4 text-3xl font-semibold *:items-center'
+      )}
+    >
+      <div className="flex flex-col text-foreground">Blair is </div>
       <div
         ref={tallestRef}
-        className="flex flex-col overflow-hidden text-blue-400"
+        className="flex flex-col overflow-hidden text-primary"
       >
         {words.map((word, index) => (
           <span key={index} className="animate-flip-words">

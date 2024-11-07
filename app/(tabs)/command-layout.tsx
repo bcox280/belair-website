@@ -26,6 +26,10 @@ export const CommandLayout = () => {
         e.preventDefault();
         setOpen((open) => !open);
       }
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        setOpen(false);
+      }
     };
 
     document.addEventListener('keydown', down);
@@ -51,11 +55,11 @@ export const CommandLayout = () => {
     <div className="container z-10 flex max-w-full flex-row justify-end p-0">
       <CommandDialog
         open={open}
-        onOpenChange={() => {
-          setOpen(true);
+        onOpenChange={(val) => {
           if (!hasBeenUsed) {
             setHasBeenUsed(true);
           }
+          setOpen(val);
         }}
         value={value}
         onValueChange={(v) => setValue(v)}

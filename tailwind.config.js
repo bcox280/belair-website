@@ -336,7 +336,7 @@ module.exports = {
         'ghost-micro-movements':
           'ghost-micro-movements 24s ease-in-out infinite',
         middle: 'middle 5s linear infinite',
-        'flip-words': 'flip-words 8s infinite',
+        'flip-words': 'flip-words 6s',
         raindrop: 'raindrop 2s',
         friend: 'friend 2s ease-in-out infinite',
         ripple: 'ripple 4s cubic-bezier(.01,.47,.96,.58)',

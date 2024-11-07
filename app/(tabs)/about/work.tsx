@@ -71,10 +71,10 @@ export const WorkCard = ({ className }: { className: string }) => {
 
           <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
             <li className="px-4 py-3 text-sm">{AtlassianProject1}</li>
-            <CollapsibleContent className="space-y-2">
-              <li className="px-4 py-3 text-sm">{AtlassianProject2}</li>
-              <li className="px-4 py-3 text-sm">{AtlassianProject3}</li>
-              <li className="px-4 py-3 text-sm">{AtlassianProject4}</li>
+            <CollapsibleContent className="space-y-2 *:px-4 *:py-3 *:text-sm">
+              <li>{AtlassianProject2}</li>
+              <li>{AtlassianProject3}</li>
+              <li>{AtlassianProject4}</li>
             </CollapsibleContent>
           </ul>
         </Collapsible>
@@ -108,9 +108,9 @@ export const WorkCard = ({ className }: { className: string }) => {
 
           <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
             <li className="px-4 py-3 text-sm">{OlympicProject1}</li>
-            <CollapsibleContent className="space-y-2">
-              <li className="px-4 py-3 text-sm">{OlympicProject2}</li>
-              <li className="px-4 py-3 text-sm">{OlympicProject3}</li>
+            <CollapsibleContent className="space-y-2 *:px-4 *:py-3 *:text-sm">
+              <li>{OlympicProject2}</li>
+              <li>{OlympicProject3}</li>
             </CollapsibleContent>
           </ul>
         </Collapsible>
