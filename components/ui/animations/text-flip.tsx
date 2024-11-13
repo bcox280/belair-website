@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { cn } from '@/lib/utils';
 
@@ -9,19 +9,27 @@ interface TitleTextProps {
 }
 
 export const BlairTitleText = (className: TitleTextProps) => {
+  const [rerender, forceRerender] = useState(false);
   // don't like this, repeat first and last....
-  const words = useMemo(
-    () => [
-      'a Frontend Engineer',
-      'a Nerd',
-      'a Board game fanatic',
-      'a Cook',
-      'a Barista',
-      'a Baker',
-      'Looking to be Hired',
-    ],
-    []
-  );
+  const words = useMemo(() => {
+    return rerender
+      ? [
+          'a Frontend Engineer',
+          'a Board game fanatic',
+          'a Cook',
+          'a Barista',
+          'a Baker',
+          'Unemployed',
+          'Looking for a Job',
+        ]
+      : [];
+  }, [rerender]);
+
+  // Lil cheeky, on first load there is a buffer of (I assume tailwindcss doing some JIT stuff, didn't really wanna deal
+  // with it ima be honest) and all the text shows, so just waiting for the first render before loading in the text
+  useEffect(() => {
+    forceRerender(true);
+  }, []);
 
   const tallestRef = useRef<HTMLDivElement>(null);
 

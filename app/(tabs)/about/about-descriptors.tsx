@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+
 import { ClickableCard } from '@/components/ui/card';
 import { CommandItem } from '@/components/ui/command';
 
@@ -9,16 +11,18 @@ const AboutInfo = () => (
   <>Find out all the information you need to hire Blair Cox</>
 );
 
-export const AboutPageItem = ({ onSelect }: PageItemProps) => (
-  <CommandItem
-    sidePanel={<AboutInfo />}
-    value={AboutString}
-    onSelect={() => onSelect(`/${AboutString}`)}
-    key={`${AboutString}-item`}
-  >
-    <span>About</span>
-  </CommandItem>
-);
+export const AboutPageItem = ({ onSelect }: PageItemProps) => {
+  return (
+    <CommandItem
+      sidePanel={<AboutInfo />}
+      value={AboutString}
+      onSelect={() => onSelect(`/${AboutString}`)}
+      key={`${AboutString}-item`}
+    >
+      <span>About</span>
+    </CommandItem>
+  );
+};
 
 export const AboutCard = ({ navigate, ...props }: CardProps) => {
   return (

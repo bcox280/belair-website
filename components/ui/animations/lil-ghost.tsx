@@ -1,4 +1,11 @@
-import { MutableRefObject, useEffect, useRef, useState } from 'react';
+import {
+  MutableRefObject,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import GhostIcon from '@/public/icons/ghost';
 
 import { cn } from '@/lib/utils';
@@ -6,6 +13,9 @@ import { getRandNumberBetween, useWindowDimensions } from '@/lib/window';
 
 interface GhostProps {
   className?: string;
+  isLoading: boolean;
+  height: number;
+  width: number;
 }
 
 interface MousePosition {
@@ -36,20 +46,30 @@ const MousePosition = (): MousePosition => {
 
 const GHOST_SIZE = 128;
 
-export const Ghost = ({ className }: GhostProps) => {
-  const { width, height } = useWindowDimensions();
+export const Ghost = ({ className, height, width, isLoading }: GhostProps) => {
+  useEffect(() => {
+    if (isLoading) {
+      // start running the loading animation. need a way then to unset it. maybe we can hook into the router?
+      // but ig that implies all loading will be page nav which i dont think i want to commit to.
+
+      // as far as the navigation, maybe move to the middle, and then do one clockwise rot, then one anti clockwise rot repeat until done
+      console.log('WELOADING');
+    }
+  }, [isLoading]);
   const ghostModeFollow = useRef(false);
   const currentLoc = useRef({
-    left: getRandNumberBetween(-64, width - 64),
-    top: getRandNumberBetween(-64, width - 64),
+    left: width / 2 - 64,
+    top: height / 2 - 64,
   });
 
   const mousePosition = MousePosition();
   const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const currentlyRunningAnimations = useRef<NodeJS.Timeout>();
   const [currentSpeed, setCurrentSpeed] = useState(0);
   const element = document.getElementById('12345');
 
-  const animate = () => {
+  // this can have multiple iterations running, not a fan tbh
+  const animate = useCallback(() => {
     if (element) {
       if (
         Math.abs(mouse.current.x - currentLoc.current.left - GHOST_SIZE / 2) <
@@ -69,43 +89,49 @@ export const Ghost = ({ className }: GhostProps) => {
       }
     }
     requestAnimationFrame(animate);
-  };
+  }, [element]);
 
   useEffect(() => {
     mouse.current.y = mousePosition.y;
     mouse.current.x = mousePosition.x;
   }, [mousePosition.x, mousePosition.y]);
 
-  const runTranslate = () => {
-    setTimeout(() => {
-      const endLeft = getRandNumberBetween(-64, width - 64);
-      const endTop = getRandNumberBetween(-64, height - 64);
-      // lets aim for nothing over 200 px/s to start with
-      const distanceToTravel = Math.sqrt(
-        Math.pow(currentLoc.current.left - endLeft, 2) +
-          Math.pow(currentLoc.current.top - endTop, 2)
-      );
-      setCurrentSpeed(Math.floor(distanceToTravel / 200));
-      if (!ghostModeFollow.current) {
-        currentLoc.current = { left: endLeft, top: endTop };
-      }
-      runTranslate();
-    }, 6000);
-  };
-
+  // still a lil better with the new changes, but not where i want it atm.
   useEffect(() => {
-    // just need this running once BUT! we also need to update it if the left/top change....
-    // currently has a bug where you can have multiple running on state change. not high prior to fix
+    const runTranslate = () => {
+      if (!currentlyRunningAnimations.current) {
+        const timeout = setTimeout(() => {
+          const endLeft = getRandNumberBetween(-64, width - 64);
+          const endTop = getRandNumberBetween(-64, height - 64);
+          // lets aim for nothing over 200 px/s to start with
+          const distanceToTravel = Math.sqrt(
+            Math.pow(currentLoc.current.left - endLeft, 2) +
+              Math.pow(currentLoc.current.top - endTop, 2)
+          );
+          setCurrentSpeed(Math.floor(distanceToTravel / 200));
+          if (!ghostModeFollow.current) {
+            currentLoc.current = { left: endLeft, top: endTop };
+          }
+          clearTimeout(currentlyRunningAnimations.current);
 
-    if (!(height === 0) && !(width === 0)) {
-      runTranslate();
-      animate();
-    }
-  }, [element, height, width]);
+          currentlyRunningAnimations.current = undefined;
+          runTranslate();
+        }, 6000);
+        currentlyRunningAnimations.current = timeout;
+      }
+    };
+    runTranslate();
+    animate();
+
+    return () => {
+      clearTimeout(currentlyRunningAnimations.current);
+      currentlyRunningAnimations.current = undefined;
+    };
+  }, [element, animate, height, width]);
 
   return (
     <div
-      className={cn('group pointer-events-none absolute  z-30', className)}
+      className={cn('group pointer-events-none absolute z-30', className)}
       id="12345"
       style={
         ghostModeFollow.current

@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
+import { LoadingContext } from '@/app/(tabs)/layout';
 
 const Card = React.forwardRef<
   HTMLDivElement,
@@ -34,35 +35,55 @@ HoverableCard.displayName = 'HoverableCard';
 
 export interface ClickableCardProps
   extends React.HTMLAttributes<HTMLDivElement> {
+  // Forcing onClick to be defined
+  onClick: React.MouseEventHandler<HTMLDivElement>;
   cardFooter?: React.ReactNode;
   cardTitle?: React.ReactNode;
   cardContent?: React.ReactNode;
   cardHeader?: React.ReactNode;
+  shouldSetLoading?: boolean;
 }
 
 const ClickableCard = React.forwardRef<HTMLDivElement, ClickableCardProps>(
   (
-    { className, cardHeader, cardTitle, cardContent, cardFooter, ...props },
+    {
+      className,
+      cardHeader,
+      cardTitle,
+      cardContent,
+      cardFooter,
+      shouldSetLoading = false,
+      onClick,
+      ...props
+    },
     ref
-  ) => (
-    <div
-      ref={ref}
-      className={cn(
-        'group cursor-pointer rounded-xl border bg-card text-card-foreground hover:shadow-2xl hover:shadow-primary',
-        className
-      )}
-      {...props}
-    >
-      <CardHeader className="space-y-0 pb-2">
-        <CardDescription>{cardHeader}</CardDescription>
-        <CardTitle className="text-4xl tabular-nums">{cardTitle}</CardTitle>
-      </CardHeader>
-      <CardContent> {cardContent}</CardContent>
-      <CardFooter className="flex-col items-start gap-1">
-        <CardDescription>{cardFooter}</CardDescription>
-      </CardFooter>
-    </div>
-  )
+  ) => {
+    const setLoading = React.useContext(LoadingContext);
+
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          'group cursor-pointer rounded-xl border bg-card text-card-foreground hover:shadow-2xl hover:shadow-primary',
+          className
+        )}
+        onClick={(event) => {
+          setLoading.setLoading(true);
+          onClick(event);
+        }}
+        {...props}
+      >
+        <CardHeader className="space-y-0 pb-2">
+          <CardDescription>{cardHeader}</CardDescription>
+          <CardTitle className="text-4xl tabular-nums">{cardTitle}</CardTitle>
+        </CardHeader>
+        <CardContent> {cardContent}</CardContent>
+        <CardFooter className="flex-col items-start gap-1">
+          <CardDescription>{cardFooter}</CardDescription>
+        </CardFooter>
+      </div>
+    );
+  }
 );
 ClickableCard.displayName = 'ClickableCard';
 

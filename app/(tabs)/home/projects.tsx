@@ -1,8 +1,10 @@
+import { useContext } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { AboutCard } from '../about/about-descriptors';
 import { ArtCard } from '../art/art-descriptors';
 import { CoffeeFinderCard } from '../coffee-finder/coffee-finder-descriptors';
+import { LoadingContext } from '../layout';
 
 export const Projects = () => {
   const router = useRouter();
