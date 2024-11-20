@@ -1,7 +1,10 @@
 import * as React from 'react';
+import { TvIcon } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 import { LoadingContext } from '@/app/(tabs)/layout';
+
+import { Separator } from './separator';
 
 const Card = React.forwardRef<
   HTMLDivElement,
@@ -77,7 +80,12 @@ const ClickableCard = React.forwardRef<HTMLDivElement, ClickableCardProps>(
           <CardDescription>{cardHeader}</CardDescription>
           <CardTitle className="text-4xl tabular-nums">{cardTitle}</CardTitle>
         </CardHeader>
-        <CardContent> {cardContent}</CardContent>
+        {/* <CardContent> {cardContent}</CardContent> */}
+        {/* {cardContent} */}
+
+        <div className="pl-4 pr-4">
+          <Separator className="mb-4 mt-2"></Separator>
+        </div>
         <CardFooter className="flex-col items-start gap-1">
           <CardDescription>{cardFooter}</CardDescription>
         </CardFooter>

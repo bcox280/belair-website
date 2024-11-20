@@ -13,6 +13,7 @@ import { AboutPageItem } from './about/about-descriptors';
 import { ArtPageItem } from './art/art-descriptors';
 import { CoffeeFinderPageItem } from './coffee-finder/coffee-finder-descriptors';
 import { HomePageItem } from './home/about-descriptors';
+import { LoadingPageItem } from './loading-descriptors';
 
 export const CommandLayout = () => {
   const router = useRouter();
@@ -47,7 +48,8 @@ export const CommandLayout = () => {
   const pageItems: React.ReactElement<typeof CommandItem>[] = [
     AboutPageItem({ onSelect: closeAndNavigate }),
     ArtPageItem({ onSelect: closeAndNavigate }),
-    CoffeeFinderPageItem({ onSelect: closeAndNavigate }),
+    // CoffeeFinderPageItem({ onSelect: closeAndNavigate }),
+    LoadingPageItem({ onSelect: closeAndNavigate }),
     HomePageItem({ onSelect: closeAndNavigate }),
   ];
 

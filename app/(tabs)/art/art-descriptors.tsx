@@ -28,9 +28,9 @@ export const ArtCard = ({ navigate, ...props }: CardProps) => {
     <ClickableCard
       {...props}
       onClick={() => navigate(ArtString)}
-      cardContent={'Art'}
+      cardContent={''}
       cardFooter={<ArtInfo />}
-      cardHeader={'Art'}
+      cardHeader={'Pretty'}
       cardTitle={'Art'}
     ></ClickableCard>
   );

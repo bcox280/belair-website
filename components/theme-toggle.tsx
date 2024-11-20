@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
@@ -45,7 +45,7 @@ export const ThemeToggle = () => {
     colour: 'default',
   });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     let darkMode = false;
     let colour = 'default';
     if (theme && firstRender.current) {

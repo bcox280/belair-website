@@ -8,17 +8,18 @@ interface TitleTextProps {
   className?: string;
 }
 
-export const BlairTitleText = (className: TitleTextProps) => {
+//TODO this is bleugh. resizing breaks it. um yeah
+export const SplashText = (className: TitleTextProps) => {
   const [rerender, forceRerender] = useState(false);
   // don't like this, repeat first and last....
   const words = useMemo(() => {
     return rerender
       ? [
-          'a Frontend Engineer',
           'a Board game fanatic',
           'a Cook',
           'a Barista',
           'a Baker',
+          'a Frontend Engineer',
           'Unemployed',
           'Looking for a Job',
         ]

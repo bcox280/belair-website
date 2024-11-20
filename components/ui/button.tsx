@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
+import { motion } from 'framer-motion';
 
 import { cn } from '@/lib/utils';
 
@@ -16,7 +17,7 @@ const buttonVariants = cva(
         outline:
           'border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground',
         enter:
-          'group border border-input text-foreground relative z-10 flex overflow-hidden shadow-sm bg-background px-14 py-4 text-lg transition-all',
+          'group border border-bg-accent text-foreground relative z-10 flex overflow-hidden shadow-s hover:bg-accent bg-background px-14 py-4 text-lg transition-all',
         secondary:
           'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
@@ -43,10 +44,37 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : 'button';
-    return (
-      <Comp
+  (
+    {
+      className,
+      variant,
+      onAnimationStart,
+      onDragStart,
+      onDragEnd,
+      onDrag,
+      size,
+      asChild = false,
+      ...props
+    },
+    ref
+  ) => {
+    return asChild ? (
+      <Slot
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    ) : variant === 'enter' ? (
+      <motion.button
+        className={cn(buttonVariants({ variant, size, className }))}
+        whileHover={{ scale: 1.5, backgroundColor: 'hsl(var(--accent))' }}
+        whileTap={{ scale: 0.7 }}
+        transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+        ref={ref}
+        {...props}
+      />
+    ) : (
+      <button
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
         {...props}
