@@ -1,5 +1,3 @@
-import { cn } from '@/lib/utils';
-
 const GhostIcon = (props: { className: string }) => (
   <svg
     width="800px"

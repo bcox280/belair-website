@@ -1,11 +1,4 @@
-import {
-  MutableRefObject,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import GhostIcon from '@/public/icons/ghost';
 
 import { cn } from '@/lib/utils';

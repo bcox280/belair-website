@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { TvIcon } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 import { LoadingContext } from '@/app/(tabs)/layout';
@@ -83,7 +82,7 @@ const ClickableCard = React.forwardRef<HTMLDivElement, ClickableCardProps>(
         {/* <CardContent> {cardContent}</CardContent> */}
         {/* {cardContent} */}
 
-        <div className="pl-4 pr-4">
+        <div className="px-4">
           <Separator className="mb-4 mt-2"></Separator>
         </div>
         <CardFooter className="flex-col items-start gap-1">

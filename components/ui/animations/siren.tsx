@@ -1,5 +1,3 @@
-import { cn } from '@/lib/utils';
-
 interface AnimatedTrailProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * The duration of the animation.

@@ -4,8 +4,6 @@ export const getRandNumberBetween = (min: number, max: number) => {
   return Math.random() * (max - min) + min;
 };
 
-1;
-
 export const useWindowDimensions = () => {
   const [windowDimensions, setWindowDimensions] = useState({
     height: 0,

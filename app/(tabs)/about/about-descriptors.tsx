@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { useRouter } from 'next/navigation';
 import { GithubIcon, LinkedinIcon, TvIcon } from 'lucide-react';
 
@@ -14,7 +13,7 @@ export const AboutString = 'about';
 const AboutInfo = () => {
   const router = useRouter();
   return (
-    <div className="flex flex-col justify-between h-24">
+    <div className="flex h-24 flex-col justify-between">
       <div>Find out all the information you need to hire Blair Cox</div>
 
       <div className="flex flex-row">

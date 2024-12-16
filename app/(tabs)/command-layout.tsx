@@ -11,7 +11,6 @@ import {
 
 import { AboutPageItem } from './about/about-descriptors';
 import { ArtPageItem } from './art/art-descriptors';
-import { CoffeeFinderPageItem } from './coffee-finder/coffee-finder-descriptors';
 import { HomePageItem } from './home/about-descriptors';
 import { LoadingPageItem } from './loading-descriptors';
 
