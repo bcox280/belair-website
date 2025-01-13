@@ -1,6 +1,6 @@
 'use client';
 
-export const Page = () => {
+const Page = () => {
   return <>coffee finder</>;
 };
 

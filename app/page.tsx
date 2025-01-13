@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import RainDropGenerator from '@/components/rain-drop-generator';
 import { ThemeToggle } from '@/components/theme-toggle';
 
-export const Page = () => {
+const Page = () => {
   const router = useRouter();
   const [show, setShow] = useState(true);
 

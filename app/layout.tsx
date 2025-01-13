@@ -20,7 +20,7 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-export const RootLayout = ({ children }: RootLayoutProps) => {
+const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <>
       <html lang="en" suppressHydrationWarning>

@@ -22,7 +22,7 @@ export const LoadingContext = createContext<{
   setLoading: () => null,
 });
 
-export const RootLayout = ({ children }: RootLayoutProps) => {
+const RootLayout = ({ children }: RootLayoutProps) => {
   const [onSplashScreen, setOnSplashScreen] = useState(true);
   const [loading, setLoading] = useState(false);
   const [show, setShow] = useState(false);

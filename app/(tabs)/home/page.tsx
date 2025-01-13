@@ -5,7 +5,7 @@ import { Separator } from '@/components/ui/separator';
 
 import Projects from './projects';
 
-export const Page = () => {
+const Page = () => {
   return (
     <>
       <div className="flex h-screen items-center justify-center">

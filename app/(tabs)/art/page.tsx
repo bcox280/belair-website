@@ -18,7 +18,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
-export const Page = () => {
+const Page = () => {
   // also add a picker for the type in top left.
   // and above we have a description of the section
   // and each card has a title as well
