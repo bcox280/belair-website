@@ -10,9 +10,9 @@ import {
 } from '@/components/ui/command';
 
 import { AboutPageItem } from './about/about-descriptors';
-import { ArtPageItem } from './art/art-descriptors';
 import { HomePageItem } from './home/about-descriptors';
 import { LoadingPageItem } from './loading-descriptors';
+import { ReviewsPageItem } from './reviews/reviews-descriptors';
 
 export const CommandLayout = () => {
   const router = useRouter();
@@ -46,8 +46,9 @@ export const CommandLayout = () => {
   // resulting "CommandItem". I need better type safety here tho
   const pageItems: React.ReactElement<typeof CommandItem>[] = [
     AboutPageItem({ onSelect: closeAndNavigate }),
-    ArtPageItem({ onSelect: closeAndNavigate }),
+    // ArtPageItem({ onSelect: closeAndNavigate }),
     // CoffeeFinderPageItem({ onSelect: closeAndNavigate }),
+    ReviewsPageItem({ onSelect: closeAndNavigate }),
     LoadingPageItem({ onSelect: closeAndNavigate }),
     HomePageItem({ onSelect: closeAndNavigate }),
   ];

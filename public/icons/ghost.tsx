@@ -9,8 +9,8 @@ const GhostIcon = (props: { className: string }) => (
     className={props.className}
   >
     {/* arms */}
-    <g transform="scale(0.5 0.5) translate(16 16)">
-      <g className={'animate-ghost-bl'}>
+    <g transform="scale(0.5 0.5) translate(16 16)" className="*:fill-foreground">
+      <g className={'animate-ghost-bl'}> 
         <path d="M15.814 22.934v8.275l-1.601 0.788-5.508-8.295 4.355-4.355 2.754 3.587z"></path>
         <path d="M9.102 16.234h-8.314l-0.788 1.537 8.301 5.56 4.323-4.343-3.523-2.754z"></path>
       </g>
@@ -28,7 +28,7 @@ const GhostIcon = (props: { className: string }) => (
       </g>
       {/* end of arms */}
 
-      <g className={'animate-none *:origin-center *:scale-125 *:fill-cyan-400'}>
+      <g className={'animate-none *:origin-center *:scale-125 *:fill-primary dark:*:brightness-[150%]'}>
         <path
           strokeWidth={'0.5'}
           d="M15.673 15.036v0.628l-0.506 0.5h-0.647v-0.25l1.153-0.877z"

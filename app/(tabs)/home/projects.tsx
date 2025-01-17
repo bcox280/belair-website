@@ -1,8 +1,8 @@
 import { useRouter } from 'next/navigation';
 
 import { AboutCard } from '../about/about-descriptors';
-import { ArtCard } from '../art/art-descriptors';
 import { LoadingCard } from '../loading-descriptors';
+import { ReviewsCard } from '../reviews/reviews-descriptors';
 
 export const Projects = () => {
   const router = useRouter();
@@ -13,15 +13,18 @@ export const Projects = () => {
         navigate={router.push}
         className="col-span-2 h-full duration-300 animate-in zoom-in hover:z-20 hover:-translate-y-1 hover:scale-110"
       />
-      <ArtCard
+      <ReviewsCard
         navigate={router.push}
         className="h-full duration-300 animate-in zoom-in hover:z-20 hover:-translate-y-1 hover:scale-110"
       />
-      {/* <CoffeeFinderCard
+      {/* <ArtCard
+        navigate={router.push}
+        className="h-full duration-300 animate-in zoom-in hover:z-20 hover:-translate-y-1 hover:scale-110"
+      />
+      <CoffeeFinderCard
         navigate={router.push}
         className="h-full duration-300 animate-in zoom-in hover:z-20 hover:-translate-y-1 hover:scale-110"
       /> */}
-
       <LoadingCard
         navigate={router.push}
         className="h-full duration-300 animate-in zoom-in hover:z-20 hover:-translate-y-1 hover:scale-110"

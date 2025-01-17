@@ -40,15 +40,6 @@ const MousePosition = (): MousePosition => {
 const GHOST_SIZE = 128;
 
 export const Ghost = ({ className, height, width, isLoading }: GhostProps) => {
-  useEffect(() => {
-    if (isLoading) {
-      // start running the loading animation. need a way then to unset it. maybe we can hook into the router?
-      // but ig that implies all loading will be page nav which i dont think i want to commit to.
-
-      // as far as the navigation, maybe move to the middle, and then do one clockwise rot, then one anti clockwise rot repeat until done
-      console.log('WELOADING');
-    }
-  }, [isLoading]);
   const ghostModeFollow = useRef(false);
   const currentLoc = useRef({
     left: width / 2 - 64,
