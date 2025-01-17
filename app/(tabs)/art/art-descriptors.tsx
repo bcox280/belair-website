@@ -7,7 +7,7 @@ export const ArtString = 'art';
 
 const ArtInfo = () => (
   <>
-    Have a look at some of the random art I've done. This could soon come to a
+    Have a look at some of the random art I&apos;ve done. This could soon come to a
     whiteboard near you
   </>
 );

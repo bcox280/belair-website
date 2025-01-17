@@ -13,7 +13,7 @@ export const Hobbies = () => (
     </CardHeader>
     <CardContent></CardContent>
     <CardFooter className="flex-col items-start gap-1">
-      I've got a few Hobbies Coffee Making BoardGames / Dnd Art Games
+      I&apos;ve got a few Hobbies Coffee Making BoardGames / Dnd Art Games
       Cooking/Baking
     </CardFooter>
   </HoverableCard>

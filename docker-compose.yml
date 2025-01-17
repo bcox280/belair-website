@@ -1,0 +1,20 @@
+services:
+  belair-website:
+    container_name: belair-website
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 2025:3000
+
+  cloudflared-tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflare-tunnel
+    hostname: cloudflare-tunnel
+    restart: unless-stopped
+    command: tunnel run
+
+    network_mode: "host"
+    environment:
+      - "TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}"

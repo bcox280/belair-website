@@ -1,5 +1,13 @@
 ## Blairs lil playground for new tech, features and anything that takes his fancy
 
-Please note the server is currently down because I'm carrying my server with me while traveling around NZ so I can do some config and changes on it for the future!
+## Current Url
 
-I'll set it up again soon!
+We've found it a home again: [https://belairhere.au](https://belairhere.au)
+
+## Known issues
+- Mobile is not great (not a high prior to fix tbh)
+- Ghost can become erratic after a while, especially when you resize
+- Some theming is a bit... wrong
+- Siren is not implemented
+- General performance issues if the rain is left open for a while, some sort of mem leak (oops)
+- General areas are not finished

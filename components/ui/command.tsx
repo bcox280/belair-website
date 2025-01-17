@@ -97,6 +97,7 @@ const CommandList = React.forwardRef<
       <div className="w-2/3 grow-0 pl-4 pt-2">
         {pages.map(
           (page) =>
+            // @ts-ignore
             value === page.props['value'] ? page.props['sidePanel'] : ''
           //well this is messy, its not infering the types correctly, ro im misunderstanding how this works, refs are confusing
           // also just realised this might be annoying to change when value changes lol
