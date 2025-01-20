@@ -27,8 +27,8 @@ export const LoadingCard = ({ navigate, ...props }: CardProps) => {
       onClick={() => navigate('./')}
       cardContent={''}
       cardFooter={<LoadingInfo />}
-      cardHeader={'Raindrop'}
-      cardTitle={'Loading Screen'}
+      cardHeader={''}
+      cardTitle={'Raindrops'}
     ></ClickableCard>
   );
 };

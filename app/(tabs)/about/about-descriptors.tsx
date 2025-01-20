@@ -27,28 +27,19 @@ const AboutInfo = () => {
         >
           <GithubIcon />
         </Button>
-        <Separator orientation="vertical" className="mx-4 h-6 w-px" />
+        <Separator
+          orientation="vertical"
+          className="mx-4 h-6 w-px self-center"
+        />
         <Button
           variant="outline"
           size="icon"
           onClick={(e) => {
             e.stopPropagation();
-
             router.push('https://www.linkedin.com/in/blair-cox-64932a118/');
           }}
         >
           <LinkedinIcon />
-        </Button>
-
-        <Separator orientation="vertical" className="mx-4 h-6 w-px" />
-        <Button
-          variant="outline"
-          size="icon"
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
-        >
-          <TvIcon />
         </Button>
       </div>
     </div>

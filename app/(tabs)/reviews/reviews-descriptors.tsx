@@ -6,9 +6,7 @@ import { CardProps, PageItemProps } from '../types';
 export const ReviewsString = 'reviews';
 
 const ReviewsInfo = () => (
-  <>
-    See what people have to say about me
-  </>
+  <>See what people I have worked with and my friends have to say about me!</>
 );
 
 export const ReviewsPageItem = ({ onSelect }: PageItemProps) => (

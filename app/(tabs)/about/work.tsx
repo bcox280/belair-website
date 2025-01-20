@@ -44,13 +44,13 @@ export const WorkCard = ({ className }: { className: string }) => {
       </CardHeader>
       <CardContent></CardContent>
       <CardFooter className="flex-col items-start gap-1">
-        <div className="flex w-full justify-between p-4">
+        <div className="flex w-full justify-between py-4">
           <div className="scroll-m-20 text-2xl font-semibold tracking-tight">
             Atlassian - Software Engineer
           </div>
           <CardDescription>Jan 2020 - Mar 2024</CardDescription>
         </div>
-        <Separator />
+        <Separator className={'mb-2'} />
 
         <Collapsible
           open={isAtlassianOpen}
@@ -69,25 +69,22 @@ export const WorkCard = ({ className }: { className: string }) => {
             </CollapsibleTrigger>
           </div>
 
-          <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
+          <ul className="my-3 ml-6 list-disc [&>li]:mt-1">
             <li className="px-4 py-3 text-sm">{AtlassianProject1}</li>
-            <CollapsibleContent className="space-y-2 *:px-4 *:py-3 *:text-sm">
+            <CollapsibleContent className="space-y-1 *:px-4 *:py-1 *:text-sm">
               <li>{AtlassianProject2}</li>
               <li>{AtlassianProject3}</li>
               <li>{AtlassianProject4}</li>
             </CollapsibleContent>
           </ul>
         </Collapsible>
-
-        <Separator />
-
-        <div className="flex w-full justify-between p-4">
+        <div className="flex w-full justify-between py-4">
           <div className="scroll-m-20 text-2xl font-semibold tracking-tight">
             Olympic Software - Software Engineering Intern
           </div>
           <CardDescription>Nov 2017 - Sep 2019</CardDescription>
         </div>
-        <Separator />
+        <Separator className={'mb-2'} />
 
         <Collapsible
           open={isOlympicOpen}
@@ -106,9 +103,9 @@ export const WorkCard = ({ className }: { className: string }) => {
             </CollapsibleTrigger>
           </div>
 
-          <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
+          <ul className="my-3 ml-6 list-disc [&>li]:mt-1">
             <li className="px-4 py-3 text-sm">{OlympicProject1}</li>
-            <CollapsibleContent className="space-y-2 *:px-4 *:py-3 *:text-sm">
+            <CollapsibleContent className="space-y-1 *:px-4 *:py-1 *:text-sm">
               <li>{OlympicProject2}</li>
               <li>{OlympicProject3}</li>
             </CollapsibleContent>

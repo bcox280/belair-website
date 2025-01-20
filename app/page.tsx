@@ -32,11 +32,9 @@ const Page = () => {
                   setShow(false);
                   setTimeout(() => {
                     router.push('/home');
-                  }, 300);
+                  }, 100);
                 }}
               >
-                {/* <span className="absolute bottom-0 left-0 h-48 w-full origin-bottom translate-y-full overflow-hidden rounded-full bg-primary transition-all duration-500 ease-in-out group-hover:translate-y-14"></span> */}
-
                 <span className="z-10 font-semibold text-secondary-foreground">
                   Enter
                 </span>
