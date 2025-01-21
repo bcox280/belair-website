@@ -54,7 +54,7 @@ export const CommandLayout = () => {
   ];
 
   return (
-    <div className="container z-10 flex max-w-full flex-row justify-end p-0">
+    <div className="container z-10 flex max-w-full flex-row justify-end self-end p-0">
       <CommandDialog
         open={open}
         onOpenChange={(val) => {

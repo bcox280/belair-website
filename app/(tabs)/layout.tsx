@@ -38,7 +38,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
         <ThemeToggle />
 
         <AnimatePresence>
-          <div className="flex h-screen max-h-screen flex-col justify-between">
+          <div className="flex h-lvh max-h-lvh flex-col justify-between">
             {onSplashScreen ? (
               <motion.div
                 exit={{ opacity: 0, scale: 1.1 }}
@@ -50,12 +50,14 @@ const RootLayout = ({ children }: RootLayoutProps) => {
               </motion.div>
             ) : (
               <motion.div
-                className="flex h-screen max-h-screen flex-col justify-around"
+                className="flex h-lvh max-h-lvh flex-col"
                 exit={{ opacity: 0, scale: 1.1 }}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
               >
-                {children}
+                <div className="flex h-lvh max-h-lvh grow flex-col justify-center">
+                  {children}
+                </div>
                 <CommandLayout />
                 {width === 0 || height === 0 ? (
                   <></>
