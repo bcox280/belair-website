@@ -79,9 +79,6 @@ const ClickableCard = React.forwardRef<HTMLDivElement, ClickableCardProps>(
           <CardDescription>{cardHeader}</CardDescription>
           <CardTitle className="text-4xl tabular-nums">{cardTitle}</CardTitle>
         </CardHeader>
-        {/* <CardContent> {cardContent}</CardContent> */}
-        {/* {cardContent} */}
-
         <div className="px-4">
           <Separator className="mb-4 mt-2"></Separator>
         </div>

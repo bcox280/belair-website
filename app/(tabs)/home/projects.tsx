@@ -8,7 +8,7 @@ export const Projects = () => {
   const router = useRouter();
 
   return (
-    <div className="mx-auto grid max-w-[40rem] grid-cols-[2fr_2fr] grid-rows-[2fr_2fr] items-start justify-center gap-6 p-6">
+    <div className="mx-auto flex grid-cols-[2fr_2fr] grid-rows-[2fr_2fr] flex-col items-start justify-center gap-6 p-6 lg:grid lg:max-w-[60dvw]">
       <AboutCard
         navigate={router.push}
         className="col-span-2 h-full duration-300 animate-in zoom-in hover:z-20 hover:-translate-y-1 hover:scale-110"

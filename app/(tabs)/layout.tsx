@@ -62,7 +62,9 @@ const RootLayout = ({ children }: RootLayoutProps) => {
               {width === 0 || height === 0 ? (
                 <></>
               ) : (
-                <Ghost isLoading={loading} height={height} width={width} />
+                <div className="hidden lg:block">
+                  <Ghost isLoading={loading} height={height} width={width} />
+                </div>
               )}
             </>
           )}
