@@ -70,7 +70,7 @@ export const CommandLayout = () => {
         <CommandList
           pages={pageItems}
           value={value}
-          className={'flex flex-row'}
+          className="flex flex-row"
         />
       </CommandDialog>
       <div

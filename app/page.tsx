@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import { Button } from '@/components/ui/button';
+import NavigationBar from '@/components/navigation-bar';
 import RainDropGenerator from '@/components/rain-drop-generator';
-import { ThemeToggle } from '@/components/theme-toggle';
 
 const Page = () => {
   const router = useRouter();
@@ -14,7 +14,7 @@ const Page = () => {
 
   return (
     <div className="flex h-screen flex-col overflow-hidden overscroll-none">
-      <ThemeToggle />
+      <NavigationBar />
 
       <AnimatePresence>
         {show ? (

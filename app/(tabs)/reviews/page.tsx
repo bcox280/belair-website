@@ -27,7 +27,7 @@ const reviews = [
     company: 'Atlassian/Olympic Software',
   },
   {
-    review: `"I loved pairing with blair on any task, he'd make it fun working on any problem and I was always learning from the sharp way he approached problems, he's also as genuine as he is tall"`,
+    review: `"I loved pairing with Blair on any task, he'd make it fun working on any problem and I was always learning from the sharp way he approached problems, he's also as genuine as he is tall"`,
     obfuscatedName: 'N. H.',
     occupation: 'Software Engineer',
     category: 'Work Friend & Mentor',

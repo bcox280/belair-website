@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useWindowDimensions } from '@/lib/window';
 import { Ghost } from '@/components/ui/animations/lil-ghost';
 import { SplashText } from '@/components/ui/animations/text-flip';
-import { ThemeToggle } from '@/components/theme-toggle';
+import NavigationBar from '@/components/navigation-bar';
 
 import { CommandLayout } from './command-layout';
 
@@ -53,7 +53,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
               >
-                <ThemeToggle />
+                <NavigationBar />
                 <div className="flex max-h-[90dvh] grow flex-col items-center justify-center">
                   {children}
                 </div>

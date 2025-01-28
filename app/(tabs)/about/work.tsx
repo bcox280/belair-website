@@ -50,7 +50,7 @@ export const WorkCard = ({ className }: { className: string }) => {
           </div>
           <CardDescription>Jan 2020 - Mar 2024</CardDescription>
         </div>
-        <Separator className={'mb-2'} />
+        <Separator className="mb-2" />
 
         <Collapsible
           open={isAtlassianOpen}
@@ -84,7 +84,7 @@ export const WorkCard = ({ className }: { className: string }) => {
           </div>
           <CardDescription>Nov 2017 - Sep 2019</CardDescription>
         </div>
-        <Separator className={'mb-2'} />
+        <Separator className="mb-2" />
 
         <Collapsible
           open={isOlympicOpen}

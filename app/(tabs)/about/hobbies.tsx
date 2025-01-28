@@ -14,7 +14,7 @@ export const Hobbies = () => (
     <CardContent></CardContent>
     <CardFooter className="flex-col items-start gap-1 text-xl font-semibold tracking-tight">
       I&apos;ve got a few....
-      <div className={'pl-2 pt-2'}>
+      <div className="pl-2 pt-2">
         <ul
           className={
             'my-6 ml-6 list-disc text-base font-normal text-muted-foreground [&>li]:mt-2'

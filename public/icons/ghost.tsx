@@ -9,26 +9,29 @@ const GhostIcon = (props: { className: string }) => (
     className={props.className}
   >
     {/* arms */}
-    <g transform="scale(0.5 0.5) translate(16 16)" className="*:fill-foreground">
-      <g className={'animate-ghost-bl'}> 
+    <g
+      transform="scale(0.5 0.5) translate(16 16)"
+      className="*:fill-foreground"
+    >
+      <g className="animate-ghost-bl">
         <path d="M15.814 22.934v8.275l-1.601 0.788-5.508-8.295 4.355-4.355 2.754 3.587z"></path>
         <path d="M9.102 16.234h-8.314l-0.788 1.537 8.301 5.56 4.323-4.343-3.523-2.754z"></path>
       </g>
-      <g className={'animate-ghost-tl'}>
+      <g className="animate-ghost-tl">
         <path d="M15.814 9.098v-8.307l-1.601-0.788-5.508 8.327 4.355 4.355 2.754-3.587z"></path>
         <path d="M9.14 15.773h-8.327l-0.794-1.537 8.288-5.56 4.355 4.343-3.523 2.754z"></path>
       </g>
-      <g className={'animate-ghost-br'}>
+      <g className="animate-ghost-br">
         <path d="M16.211 22.934v8.275l1.569 0.788 5.534-8.295-4.349-4.355-2.754 3.587z"></path>
         <path d="M22.898 16.183h8.314l0.788 1.601-8.301 5.528-4.323-4.375 3.523-2.754z"></path>
       </g>
-      <g className={'animate-ghost-tr'}>
+      <g className="animate-ghost-tr">
         <path d="M16.211 9.098v-8.307l1.569-0.788 5.534 8.327-4.349 4.355-2.754-3.587z"></path>
         <path d="M22.86 15.824h8.327l0.794-1.601-8.288-5.528-4.355 4.375 3.523 2.754z"></path>
       </g>
       {/* end of arms */}
 
-      <g className={'animate-none *:origin-center *:scale-125 *:fill-primary dark:*:brightness-[150%]'}>
+      <g className="animate-none *:origin-center *:scale-125 *:fill-primary dark:*:brightness-[150%]">
         <path
           strokeWidth={'0.5'}
           d="M15.673 15.036v0.628l-0.506 0.5h-0.647v-0.25l1.153-0.877z"
