@@ -78,7 +78,7 @@ export const ThemeToggle = () => {
   };
 
   return (
-    <div className="container z-10 flex max-w-full flex-row justify-end p-0">
+    <div className="container z-10 flex max-w-full flex-row justify-end p-0 pr-1 pt-1">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="z-10">

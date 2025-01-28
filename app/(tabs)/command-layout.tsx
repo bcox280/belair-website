@@ -18,7 +18,7 @@ export const CommandLayout = () => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [hasBeenUsed, setHasBeenUsed] = useState(false);
-  const [value, setValue] = useState('art');
+  const [value, setValue] = useState('about');
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -54,7 +54,7 @@ export const CommandLayout = () => {
   ];
 
   return (
-    <div className="container z-10 flex max-w-full flex-row justify-end self-end p-0">
+    <div className="container z-10 flex max-w-full flex-row justify-end justify-self-end p-0">
       <CommandDialog
         open={open}
         onOpenChange={(val) => {

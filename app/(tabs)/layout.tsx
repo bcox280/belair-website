@@ -34,41 +34,40 @@ const RootLayout = ({ children }: RootLayoutProps) => {
 
   return (
     <LoadingContext.Provider value={{ setLoading }}>
-      <div className="overflow-hidden overscroll-none">
-        <ThemeToggle />
-
-        <AnimatePresence>
-          <div className="flex h-lvh max-h-lvh flex-col justify-between">
-            {onSplashScreen ? (
+      <AnimatePresence>
+        <div className="flex h-screen max-h-screen w-screen flex-col items-center justify-center overflow-hidden overscroll-none">
+          {onSplashScreen ? (
+            <motion.div
+              exit={{ opacity: 0, scale: 1.1 }}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="m-auto flex flex-col items-center"
+            >
+              <SplashText />
+            </motion.div>
+          ) : (
+            <>
               <motion.div
-                exit={{ opacity: 0, scale: 1.1 }}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="flex h-full items-center justify-center"
-              >
-                <SplashText />
-              </motion.div>
-            ) : (
-              <motion.div
-                className="flex h-lvh max-h-lvh flex-col"
+                className="flex h-dvh max-h-dvh w-screen flex-col justify-between"
                 exit={{ opacity: 0, scale: 1.1 }}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
               >
-                <div className="flex h-lvh max-h-lvh grow flex-col justify-center">
+                <ThemeToggle />
+                <div className="flex max-h-[90dvh] grow flex-col items-center justify-center">
                   {children}
                 </div>
                 <CommandLayout />
-                {width === 0 || height === 0 ? (
-                  <></>
-                ) : (
-                  <Ghost isLoading={loading} height={height} width={width} />
-                )}
               </motion.div>
-            )}
-          </div>
-        </AnimatePresence>
-      </div>
+              {width === 0 || height === 0 ? (
+                <></>
+              ) : (
+                <Ghost isLoading={loading} height={height} width={width} />
+              )}
+            </>
+          )}
+        </div>
+      </AnimatePresence>
     </LoadingContext.Provider>
   );
 };

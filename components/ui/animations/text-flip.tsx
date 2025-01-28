@@ -8,10 +8,8 @@ interface TitleTextProps {
   className?: string;
 }
 
-//TODO this is bleugh. resizing breaks it. um yeah
 export const SplashText = (className: TitleTextProps) => {
   const [rerender, forceRerender] = useState(false);
-  // don't like this, repeat first and last....
   const words = useMemo(() => {
     return rerender
       ? [
@@ -26,34 +24,9 @@ export const SplashText = (className: TitleTextProps) => {
       : [];
   }, [rerender]);
 
-  // Lil cheeky, on first load there is a buffer of (I assume tailwindcss doing some JIT stuff, didn't really wanna deal
-  // with it ima be honest) and all the text shows, so just waiting for the first render before loading in the text
   useEffect(() => {
     forceRerender(true);
   }, []);
-
-  const tallestRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (tallestRef.current) {
-      let maxHeight = 0;
-
-      words.forEach((word) => {
-        const span = document.createElement('span');
-        span.className = 'absolute opacity-0 w-2/5';
-        span.textContent = word;
-        tallestRef.current?.appendChild(span);
-        const height = span.offsetHeight;
-        tallestRef.current?.removeChild(span);
-
-        if (height > maxHeight) {
-          maxHeight = height;
-        }
-      });
-
-      tallestRef.current.style.height = `${maxHeight}px`;
-    }
-  }, [words]);
 
   return (
     <div
@@ -63,10 +36,7 @@ export const SplashText = (className: TitleTextProps) => {
       )}
     >
       <div className="flex flex-col text-foreground">Blair is </div>
-      <div
-        ref={tallestRef}
-        className="flex flex-col overflow-hidden text-primary"
-      >
+      <div className="flex max-h-9 flex-col overflow-hidden text-primary">
         {words.map((word, index) => (
           <span key={index} className="animate-flip-words">
             {word}

@@ -67,9 +67,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ) : variant === 'enter' ? (
       <motion.button
         className={cn(buttonVariants({ variant, size, className }))}
-        whileHover={{ scale: 1.5, backgroundColor: 'hsl(var(--accent))' }}
-        whileTap={{ scale: 0.7 }}
-        transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+        whileHover={{ scale: 1.4, backgroundColor: 'hsl(var(--accent))' }}
+        whileTap={{ scale: 0.8 }}
+        transition={{ type: 'spring', stiffness: 200, damping: 10 }}
         ref={ref}
         {...props}
       />
