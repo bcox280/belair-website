@@ -46,8 +46,6 @@ export const CommandLayout = () => {
   // resulting "CommandItem". I need better type safety here tho
   const pageItems: React.ReactElement<typeof CommandItem>[] = [
     AboutPageItem({ onSelect: closeAndNavigate }),
-    // ArtPageItem({ onSelect: closeAndNavigate }),
-    // CoffeeFinderPageItem({ onSelect: closeAndNavigate }),
     ReviewsPageItem({ onSelect: closeAndNavigate }),
     LoadingPageItem({ onSelect: closeAndNavigate }),
     HomePageItem({ onSelect: closeAndNavigate }),

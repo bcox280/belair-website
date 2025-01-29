@@ -1,19 +1,14 @@
-import {
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-  HoverableCard,
-} from '@/components/ui/card';
+import { CardFooter } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 
-export const Skills = () => (
-  <HoverableCard>
-    <CardHeader className="space-y-0 pb-2">
-      <CardTitle className="text-4xl">Skills</CardTitle>
-    </CardHeader>
-    <CardContent></CardContent>
+export const Skills = ({
+  className,
+  title,
+}: {
+  className: string;
+  title: React.ReactNode;
+}) => (
+  <>
     <CardFooter className="flex-col items-start gap-1">
       <div className="text-xl font-semibold tracking-tight">Languages</div>
       <Separator />
@@ -44,5 +39,5 @@ export const Skills = () => (
         Design
       </div>
     </CardFooter>
-  </HoverableCard>
+  </>
 );

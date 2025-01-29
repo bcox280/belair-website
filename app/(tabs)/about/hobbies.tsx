@@ -1,17 +1,7 @@
-import {
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-  HoverableCard,
-} from '@/components/ui/card';
+import { CardFooter } from '@/components/ui/card';
 
-export const Hobbies = () => (
-  <HoverableCard>
-    <CardHeader className="space-y-0 pb-2">
-      <CardTitle className="text-4xl tabular-nums">Hobbies</CardTitle>
-    </CardHeader>
-    <CardContent></CardContent>
+export const Hobbies = ({ title }: { title: React.ReactNode }) => (
+  <>
     <CardFooter className="flex-col items-start gap-1 text-xl font-semibold tracking-tight">
       I&apos;ve got a few....
       <div className="pl-2 pt-2">
@@ -29,5 +19,5 @@ export const Hobbies = () => (
         </ul>
       </div>
     </CardFooter>
-  </HoverableCard>
+  </>
 );

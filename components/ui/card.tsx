@@ -23,7 +23,7 @@ Card.displayName = 'Card';
 const HoverableCard = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
+>(({ className, children, title, ...props }, ref) => (
   <div
     ref={ref}
     className={cn(
@@ -31,7 +31,12 @@ const HoverableCard = React.forwardRef<
       className
     )}
     {...props}
-  />
+  >
+    <CardHeader className="space-y-0 pb-4">
+      <CardTitle className="text-4xl tabular-nums">{title}</CardTitle>
+    </CardHeader>
+    {children}
+  </div>
 ));
 HoverableCard.displayName = 'HoverableCard';
 
