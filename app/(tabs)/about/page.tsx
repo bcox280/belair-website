@@ -10,19 +10,23 @@ import { Me } from './me';
 import { Skills } from './skills';
 import { WorkCard } from './work';
 
-const ResumeCards: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return React.Children.map(children, (child, index) => {
-    const childElement = child as React.ReactElement;
-    return (
-      <HoverableCard
-        title={childElement.props.title}
-        className={childElement.props.className}
-        key={index}
-      >
-        {child}
-      </HoverableCard>
-    );
-  });
+const ResumeCards = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <>
+      {React.Children.map(children, (child, index) => {
+        const childElement = child as React.ReactElement;
+        return (
+          <HoverableCard
+            title={childElement.props.title}
+            className={childElement.props.className}
+            key={index}
+          >
+            {child}
+          </HoverableCard>
+        );
+      })}
+    </>
+  );
 };
 
 const Page = () => {
