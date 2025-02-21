@@ -13,7 +13,9 @@
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
     "dockerify": "docker compose up --build -d",
-    "kill-docker": "docker compose down"
+    "kill-docker": "docker compose down",
+    "db:generate": "npx drizzle-kit generate",
+    "db:migrate": "tsx ./db/migrate.ts"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -29,11 +31,14 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.39.3",
     "embla-carousel-react": "^8.3.0",
     "lucide-react": "0.105.0-alpha.4",
     "motion": "^11.11.17",
     "next": "^14.2.13",
     "next-themes": "^0.3.0",
+    "pg": "^8.13.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.26.1",
@@ -43,6 +48,7 @@
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
     "@types/node": "^18.11.5",
+    "@types/pg": "^8.11.11",
     "@types/react": "^18.0.23",
     "@types/react-dom": "^18.0.7",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
@@ -50,6 +56,7 @@
     "autoprefixer": "^10.4.14",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
+    "drizzle-kit": "^0.30.4",
     "eslint": "^8.26.0",
     "eslint-config-next": "13.3.0",
     "eslint-config-prettier": "^8.8.0",
@@ -74,6 +81,7 @@
     "tailwindcss": "^3.4.12",
     "tailwindcss-animate": "^1.0.7",
     "ts-loader": "9.4.1",
+    "tsx": "^4.19.3",
     "typescript": "^4.8.4"
   }
 }
